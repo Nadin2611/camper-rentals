@@ -6,8 +6,8 @@ import {
   Form,
   Input,
   TextArea,
-  Button,
 } from './Modal.styled';
+import { Button } from 'components/Button/Button.styled';
 
 const Modal = ({ onClose }) => {
   const [formData, setFormData] = useState({

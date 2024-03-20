@@ -1,11 +1,10 @@
-import Modal from 'components/Modal/Modal';
+import { HomePageContainer } from 'components/Container/Container.styled';
 
 const HomePage = () => {
   return (
-    <div>
-      <h1>Home Page</h1>
-      <Modal />
-    </div>
+    <HomePageContainer>
+      <h1>fdd</h1>
+    </HomePageContainer>
   );
 };
 
