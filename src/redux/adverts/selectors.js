@@ -1,4 +1,4 @@
-export const selectAdverts = state => state.adverts.advert;
+export const selectAdverts = state => state.adverts.adverts;
 
 export const selectAdvertsLoading = state => state.adverts.isLoading;
 

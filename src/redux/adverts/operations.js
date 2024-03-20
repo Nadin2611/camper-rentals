@@ -9,9 +9,8 @@ axios.defaults.baseURL =
 export const getAdverts = createAsyncThunk(
   '/adverts',
   async (credentials, thunkAPI) => {
-    const { limit = 4, page = 1 } = credentials;
     try {
-      const { data } = await axios.get(`/adverts?page=${page}&limit=${limit}`);
+      const { data } = await axios.get(`/adverts`);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

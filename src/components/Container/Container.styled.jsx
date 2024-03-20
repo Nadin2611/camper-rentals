@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import backgroundImage from '../../assets/images/airbnb-campers.jpg';
+import backgroundImage from '../../assets/images/airbnb-campers.jpeg';
 
 export const Container = styled.div`
   width: 100%;

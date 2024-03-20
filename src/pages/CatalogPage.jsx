@@ -4,37 +4,30 @@ import { getAdverts } from '../redux/adverts/operations';
 import {
   selectAdverts,
   selectAdvertsLoading,
-  selectAdvertsError,
 } from '../redux/adverts/selectors';
+
+import AdvertList from 'components/Catalog/AdvertList';
+import { Container } from 'components/Container/Container.styled';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
   const adverts = useSelector(selectAdverts);
   const isLoading = useSelector(selectAdvertsLoading);
-  const error = useSelector(selectAdvertsError);
 
   useEffect(() => {
     dispatch(getAdverts());
   }, [dispatch]);
 
+  console.log(adverts);
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
-
-  console.log(adverts);
   return (
-    <div>
-      <h2>Catalog Page</h2>
-      {/* <ul>
-        {adverts.map(advert => (
-          <li key={advert._id}>{advert.name}</li>
-        ))}
-      </ul> */}
-    </div>
+    <Container>
+      <AdvertList adverts={adverts} />
+    </Container>
   );
 };
 

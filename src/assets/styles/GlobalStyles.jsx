@@ -57,6 +57,7 @@ button {
     font-family: inherit;
     border: none;
     cursor: pointer;
+    padding:0
 }
 
 *, 
