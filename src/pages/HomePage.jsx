@@ -1,5 +1,5 @@
 import { HomePageContainer } from 'components/Container/Container.styled';
-import Welcome from 'components/Welcome/Welcome';
+import Welcome from 'components/Welcome';
 
 const HomePage = () => {
   return (

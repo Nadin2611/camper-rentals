@@ -1,22 +1,11 @@
-import AdvertItem from './AdvertCard';
+import AdvertItem from './AdvertItem';
 import { ListContainer } from './AdvertList.styled';
 
-// const AdvertList = ({ adverts }) => {
-//   return (
-//     <ListContainer>
-//       {adverts.map(advert => {
-//         console.log('Key:', advert._id);
-//         return <AdvertItem key={advert._id} advert={advert} />;
-//       })}
-//     </ListContainer>
-//   );
-// };
-
-const AdvertList = ({ adverts }) => {
+const AdvertList = ({ adverts, onShowMore }) => {
   return (
     <ListContainer>
       {adverts.map((advert, index) => (
-        <AdvertItem key={index} advert={advert} />
+        <AdvertItem key={index} advert={advert} onShowMore={onShowMore} />
       ))}
     </ListContainer>
   );

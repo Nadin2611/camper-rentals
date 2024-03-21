@@ -3,6 +3,7 @@ export { default as AlcoveIcon } from './AlcoveIcon';
 export { default as AutomaticIcon } from './AutomaticIcon';
 export { default as BedsIcon } from './BedsIcon';
 export { default as CdIcon } from './CdIcon';
+export { default as CloseIcon } from './CloseIcon';
 export { default as ConditionerIcon } from './ConditionerIcon';
 export { default as DateIcon } from './DateIcon';
 export { default as FreezerIcon } from './FreezerIcon';

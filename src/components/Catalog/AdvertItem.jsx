@@ -1,3 +1,4 @@
+// import { useState } from 'react';
 import { Button } from 'components/Button/Button.styled';
 import {
   CardContainer,
@@ -15,7 +16,7 @@ import {
   Location,
   InfoContainer,
   RatingWrapper,
-} from './AdvertCard.styled';
+} from './AdvertItem.styled';
 
 import * as Icons from '../Icons';
 
@@ -30,7 +31,9 @@ const {
   MapPinIcon,
 } = Icons;
 
-const AdvertItem = ({ advert }) => {
+const AdvertItem = ({ advert, onShowMore }) => {
+  // const [isFavorite, setIsFavorite] = useState(false);
+
   const {
     name,
     price,
@@ -99,7 +102,7 @@ const AdvertItem = ({ advert }) => {
             <span> {details.beds} beds</span>
           </DetailItem>
         </DetailsContainer>
-        <Button>Show more</Button>
+        <Button onClick={onShowMore}>Show more</Button>
       </InfoWrapper>
     </CardContainer>
   );

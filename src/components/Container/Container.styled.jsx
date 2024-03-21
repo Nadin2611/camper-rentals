@@ -3,8 +3,10 @@ import backgroundImage from '../../assets/images/bg2.jpg';
 
 export const Container = styled.div`
   width: 100%;
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
+  padding-left: 64px;
+  padding-right: 64px;
 `;
 
 export const HomePageContainer = styled.div`
@@ -18,4 +20,11 @@ export const HomePageContainer = styled.div`
   background-position: center bottom;
   background-size: cover;
   background-repeat: no-repeat;
+  margin: 0 auto;
+`;
+
+export const CatalogPageContainer = styled(Container)`
+  padding-top: 100px;
+  display: flex;
+  gap: 64px;
 `;

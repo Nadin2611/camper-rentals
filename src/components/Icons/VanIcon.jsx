@@ -1,8 +1,8 @@
 import sprite from '../../assets/images/sprite.svg';
 
-const VanIcon = ({ size }) => {
+const VanIcon = ({ width, height }) => {
   return (
-    <svg width={size} height={size}>
+    <svg width={width} height={height}>
       <use href={`${sprite}#icon-van`}></use>
     </svg>
   );

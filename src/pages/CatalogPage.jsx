@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAdverts } from '../redux/adverts/operations';
 import {
@@ -7,27 +7,44 @@ import {
 } from '../redux/adverts/selectors';
 
 import AdvertList from 'components/Catalog/AdvertList';
-import { Container } from 'components/Container/Container.styled';
+import { CatalogPageContainer } from 'components/Container/Container.styled';
+import SideBar from 'components/SideBar';
+import Loader from 'components/Loader';
+import ModalDetails from 'components/Modal/ModalDetails';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
   const adverts = useSelector(selectAdverts);
   const isLoading = useSelector(selectAdvertsLoading);
+  const locations = [...new Set(adverts.map(advert => advert.location))];
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  console.log(adverts);
 
   useEffect(() => {
     dispatch(getAdverts());
   }, [dispatch]);
 
-  console.log(adverts);
+  const handleShowModal = () => {
+    setIsModalOpen(true);
+    console.log(locations);
+  };
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
 
-  return (
-    <Container>
-      <AdvertList adverts={adverts} />
-    </Container>
+  return isLoading ? (
+    <Loader />
+  ) : (
+    <CatalogPageContainer>
+      <SideBar locations={locations} />
+      <AdvertList adverts={adverts} onShowMore={handleShowModal} />
+      {isModalOpen && (
+        <ModalDetails advert={adverts[0]} closeModal={handleModalClose} />
+      )}
+    </CatalogPageContainer>
   );
 };
 

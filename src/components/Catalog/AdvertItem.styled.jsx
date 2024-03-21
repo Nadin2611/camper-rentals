@@ -13,6 +13,12 @@ export const CardContainer = styled.div`
 
 export const ImageWrapper = styled.div``;
 
+export const Image = styled.img`
+  border-radius: 10px;
+  width: 290px;
+  height: 310px;
+`;
+
 export const InfoWrapper = styled.div`
   display: flex;
   width: 526px;
@@ -20,12 +26,6 @@ export const InfoWrapper = styled.div`
   align-items: flex-start;
   gap: 24px;
   flex-shrink: 0;
-`;
-
-export const Image = styled.img`
-  width: 290px;
-  height: 310px;
-  border-radius: 10px;
 `;
 
 export const InfoContainer = styled.div`

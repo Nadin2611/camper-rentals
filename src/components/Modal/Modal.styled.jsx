@@ -13,19 +13,20 @@ export const ModalBackdrop = styled.div`
 `;
 
 export const ModalContent = styled.div`
-  width: 448px;
-  height: 532px;
-  padding: 24px;
-  gap: 24px;
-  border-radius: 10px;
+  position: relative;
+  max-width: 982px;
+  height: 90vh;
+  padding: 40px;
+  border-radius: 20px;
   border: 1px solid rgba(16, 24, 40, 0.2);
-  background: rgba(255, 255, 255, 1);
+  background: var(--color-background);
 `;
 
 export const CloseButton = styled.button`
   position: absolute;
-  background: none;
-  font-size: 24px;
+  top: 20px;
+  right: 20px;
+  backgroud-color: transparent;
 `;
 
 export const Form = styled.form`
@@ -65,4 +66,25 @@ color: rgba(16, 24, 40, 0.6);
   letter-spacing: 0em;
   color: rgba(16, 24, 40, 0.6);
 
+`;
+
+export const ImageList = styled.ul`
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+`;
+
+export const ImageItem = styled.li`
+  border-radius: 10px;
+
+  img {
+    width: 290px;
+    height: 310px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+`;
+
+export const Description = styled.p`
+  color: var(--color-main);
 `;
