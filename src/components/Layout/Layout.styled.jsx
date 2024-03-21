@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const Header = styled.header`
@@ -14,7 +14,8 @@ export const NavList = styled.ul`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 100px;
+  width: 100%;
+  gap: 150px;
   font-size: 24px;
   font-weight: bold;
 `;
@@ -37,4 +38,18 @@ export const Link = styled(NavLink)`
       color: var(--color-button);
     }
   }
+`;
+const slideIn = keyframes`
+  0% {
+    transform: translateX(-2000%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+`;
+
+export const IconWrapper = styled.div`
+  display: inline-block;
+  opacity: 1;
+  animation: ${slideIn} 4s forwards;
 `;

@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { TbCamper } from 'react-icons/tb';
 
-import { Header, Link, NavList } from './Layout.styled';
+import { Header, Link, NavList, IconWrapper } from './Layout.styled';
 import Loader from 'components/Loader';
 
 const Layout = () => {
@@ -12,7 +12,9 @@ const Layout = () => {
         <NavList>
           <li>
             <Link to="/">
-              <TbCamper size={40} />
+              <IconWrapper>
+                <TbCamper size={40} />
+              </IconWrapper>
             </Link>
           </li>
           <li>

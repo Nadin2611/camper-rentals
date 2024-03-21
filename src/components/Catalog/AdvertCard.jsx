@@ -70,7 +70,7 @@ const AdvertItem = ({ advert }) => {
               <Rating>
                 {rating}({advert.reviews.length} reviews)
               </Rating>
-            </RatingContainer>{' '}
+            </RatingContainer>
             <Location>
               <MapPinIcon size={16} />
               {renderLocation}
