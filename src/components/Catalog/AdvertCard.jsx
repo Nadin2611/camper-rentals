@@ -44,6 +44,8 @@ const AdvertItem = ({ advert }) => {
     details,
   } = advert;
 
+  const formattedPrice = price.toFixed(2);
+  const renderLocation = location.split(', ').reverse().join(', ');
   const capitalize = string => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
@@ -57,13 +59,12 @@ const AdvertItem = ({ advert }) => {
         <InfoContainer>
           <TitleContainer>
             <Title>{name}</Title>
-            <Price>&euro;{price}</Price>
+            <Price>&euro;{formattedPrice}</Price>
             <FavoriteButton>
               <HeartIcon size={24} />
             </FavoriteButton>
           </TitleContainer>
           <RatingWrapper>
-            {' '}
             <RatingContainer>
               <StarIcon size={14} />
               <Rating>
@@ -72,7 +73,7 @@ const AdvertItem = ({ advert }) => {
             </RatingContainer>{' '}
             <Location>
               <MapPinIcon size={16} />
-              {location}
+              {renderLocation}
             </Location>
           </RatingWrapper>
         </InfoContainer>
