@@ -1,9 +1,10 @@
 import { HomePageContainer } from 'components/Container/Container.styled';
+import Welcome from 'components/Welcome/Welcome';
 
 const HomePage = () => {
   return (
     <HomePageContainer>
-      <h1>fdd</h1>
+      <Welcome />
     </HomePageContainer>
   );
 };
