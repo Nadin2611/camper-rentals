@@ -3,7 +3,7 @@ import sprite from '../../assets/images/sprite.svg';
 const SearchIcon = ({ size }) => {
   return (
     <svg width={size} height={size}>
-      <use href={`${sprite}#search`}></use>
+      <use href={`${sprite}#icon-search`}></use>
     </svg>
   );
 };

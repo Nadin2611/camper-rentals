@@ -12,7 +12,6 @@ import {
   Price,
   FavoriteButton,
   RatingContainer,
-  Rating,
   Location,
   InfoContainer,
   RatingWrapper,
@@ -67,13 +66,13 @@ const AdvertItem = ({ advert }) => {
           <RatingWrapper>
             <RatingContainer>
               <StarIcon size={14} />
-              <Rating>
+              <span>
                 {rating}({advert.reviews.length} reviews)
-              </Rating>
+              </span>
             </RatingContainer>
             <Location>
               <MapPinIcon size={16} />
-              {renderLocation}
+              <span> {renderLocation}</span>
             </Location>
           </RatingWrapper>
         </InfoContainer>

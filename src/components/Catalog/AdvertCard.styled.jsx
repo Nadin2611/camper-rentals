@@ -65,13 +65,16 @@ export const RatingWrapper = styled.div`
 
 export const RatingContainer = styled.div`
   display: flex;
+  gap: 4px;
   align-items: center;
   text-decoration-line: underline;
 `;
 
-export const Rating = styled.p``;
-
-export const Location = styled.p``;
+export const Location = styled.div`
+  display: flex;
+  gap: 4px;
+  align-items: center;
+`;
 
 export const Description = styled.p`
   display: -webkit-box;

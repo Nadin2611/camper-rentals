@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import backgroundImage from '../../assets/images/airbnb-campers.jpeg';
+import backgroundImage from '../../assets/images/bg2.jpg';
 
 export const Container = styled.div`
   width: 100%;
@@ -15,7 +15,7 @@ export const HomePageContainer = styled.div`
     ),
     url(${backgroundImage});
   height: 100vh;
-  background-position: center;
+  background-position: center bottom;
   background-size: cover;
   background-repeat: no-repeat;
 `;

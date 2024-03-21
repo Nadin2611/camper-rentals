@@ -3,22 +3,25 @@ import styled from 'styled-components';
 export const WelcomeContainer = styled.div`
   display: flex;
   flex-direction: column;
+
   padding: 20px;
   color: var(--color-background);
-  max-width: 700px;
+  max-width: 800px;
   text-align: center;
   align-items: center;
   gap: 30px;
 `;
 
 export const TextContainer = styled.div`
+  margin-top: 80px;
+  margin-left: 80px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 `;
 
 export const Title = styled.h1`
-  font-size: 30px;
+  font-size: 36px;
 
   text-align: center;
 `;

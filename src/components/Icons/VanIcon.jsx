@@ -3,7 +3,7 @@ import sprite from '../../assets/images/sprite.svg';
 const VanIcon = ({ size }) => {
   return (
     <svg width={size} height={size}>
-      <use href={`${sprite}#van`}></use>
+      <use href={`${sprite}#icon-van`}></use>
     </svg>
   );
 };

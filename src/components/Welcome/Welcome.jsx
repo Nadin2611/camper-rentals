@@ -11,7 +11,6 @@ const Welcome = () => {
   return (
     <WelcomeContainer>
       <TextContainer>
-        {' '}
         <Title>Welcome to CamperDreamUA!</Title>
         <Paragraph>
           Your gateway to exploring the most enchanting corners of Ukraine. If
