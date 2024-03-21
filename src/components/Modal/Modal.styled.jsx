@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const ModalBackdrop = styled.div`
   position: fixed;
@@ -15,8 +16,7 @@ export const ModalBackdrop = styled.div`
 export const ModalContent = styled.div`
   position: relative;
   max-width: 982px;
-  height: 90vh;
-  padding: 40px;
+  padding: 40px 40px 68px 40px;
   border-radius: 20px;
   border: 1px solid rgba(16, 24, 40, 0.2);
   background: var(--color-background);
@@ -87,4 +87,39 @@ export const ImageItem = styled.li`
 
 export const Description = styled.p`
   color: var(--color-main);
+`;
+
+export const InfoContainer = styled.div`
+  margin-top: 44px;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -24px;
+    width: 902px;
+    height: 1px;
+    background-color: rgba(16, 24, 40, 0.2);
+  }
+`;
+
+export const List = styled.ul`
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+`;
+
+export const ListItem = styled.li`
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+`;
+
+export const Link = styled(NavLink)`
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+  }
 `;

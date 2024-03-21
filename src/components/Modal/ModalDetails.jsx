@@ -7,6 +7,10 @@ import {
   ImageList,
   ImageItem,
   Description,
+  InfoContainer,
+  List,
+  ListItem,
+  Link,
 } from './Modal.styled';
 
 import { CloseIcon, MapPinIcon, StarIcon } from 'components/Icons';
@@ -69,8 +73,18 @@ const ModalDetails = ({ advert, closeModal }) => {
               </ImageItem>
             ))}
         </ImageList>
-
         <Description>{description}</Description>
+
+        <InfoContainer>
+          <List>
+            <ListItem>
+              <Link to="features">Features</Link>
+            </ListItem>
+            <ListItem>
+              <Link to="reviews">Reviews</Link>
+            </ListItem>
+          </List>
+        </InfoContainer>
       </ModalContent>
     </ModalBackdrop>
   );
