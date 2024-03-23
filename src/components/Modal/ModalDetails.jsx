@@ -1,16 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import {
   ModalBackdrop,
   ModalContent,
   CloseButton,
+  SideContent,
   ImageList,
   ImageItem,
   Description,
   InfoContainer,
   List,
   ListItem,
-  Link,
+  Button,
 } from './Modal.styled';
 
 import { CloseIcon, MapPinIcon, StarIcon } from 'components/Icons';
@@ -21,8 +22,12 @@ import {
   RatingContainer,
   Title,
 } from 'components/Catalog/AdvertItem.styled';
+import Features from 'components/Features';
+import Reviews from 'components/Reviews';
 
 const ModalDetails = ({ advert, closeModal }) => {
+  const [showFeatures, setShowFeatures] = useState(false);
+  const [showReviews, setShowReviews] = useState(false);
   const { _id, name, price, rating, location, description, reviews, gallery } =
     advert;
 
@@ -46,6 +51,16 @@ const ModalDetails = ({ advert, closeModal }) => {
     }
   };
 
+  const handleFeaturesClick = () => {
+    setShowFeatures(true);
+    setShowReviews(false);
+  };
+
+  const handleReviewsClick = () => {
+    setShowFeatures(false);
+    setShowReviews(true);
+  };
+
   return (
     <ModalBackdrop onClick={handleCloseModal}>
       <ModalContent>
@@ -65,26 +80,30 @@ const ModalDetails = ({ advert, closeModal }) => {
           </Location>
         </RatingWrapper>
         <Price style={{ marginBottom: '24px' }}>&euro;{formattedPrice}</Price>
-        <ImageList>
-          {gallery.length > 0 &&
-            gallery.map((link, index) => (
-              <ImageItem key={`${_id}/${index}`}>
-                <img src={link} alt={name} />
-              </ImageItem>
-            ))}
-        </ImageList>
-        <Description>{description}</Description>
 
+        <SideContent>
+          <ImageList>
+            {gallery.length > 0 &&
+              gallery.map((link, index) => (
+                <ImageItem key={`${_id}/${index}`}>
+                  <img src={link} alt={name} />
+                </ImageItem>
+              ))}
+          </ImageList>
+          <Description>{description}</Description>
+        </SideContent>
         <InfoContainer>
           <List>
             <ListItem>
-              <Link to="features">Features</Link>
+              <Button onClick={handleFeaturesClick}>Features</Button>
             </ListItem>
             <ListItem>
-              <Link to="reviews">Reviews</Link>
+              <Button onClick={handleReviewsClick}>Reviews</Button>
             </ListItem>
           </List>
         </InfoContainer>
+        {showFeatures && <Features advert={advert} />}
+        {showReviews && <Reviews advert={advert} />}
       </ModalContent>
     </ModalBackdrop>
   );

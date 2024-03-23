@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export const SidebarContainer = styled.div`
+export const FilterContainer = styled.div`
   width: 360px;
 `;
 
-export const SidebarForm = styled.form`
+export const FilterForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -54,7 +54,7 @@ export const SelectIcon = styled.div`
 
 export const Option = styled.option``;
 
-export const SidebarLabel = styled.label`
+export const FilterLabel = styled.label`
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
@@ -71,7 +71,7 @@ export const SidebarLabel = styled.label`
   }
 `;
 
-export const SidebarTitle = styled.h2`
+export const FilterTitle = styled.h2`
   color: var(--color-main);
   font-weight: 500;
   margin-bottom: 14px;

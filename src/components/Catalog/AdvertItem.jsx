@@ -3,7 +3,7 @@ import { Button } from 'components/Button/Button.styled';
 import {
   CardContainer,
   Description,
-  DetailItem,
+  DetailsItem,
   DetailsContainer,
   Image,
   ImageWrapper,
@@ -19,6 +19,7 @@ import {
 } from './AdvertItem.styled';
 
 import * as Icons from '../Icons';
+import AcIcon from 'components/Icons/AcIcon';
 
 const {
   AdultsIcon,
@@ -81,26 +82,30 @@ const AdvertItem = ({ advert, onShowMore }) => {
         </InfoContainer>
         <Description>{description}</Description>
         <DetailsContainer>
-          <DetailItem>
+          <DetailsItem>
             <AdultsIcon size={20} />
             <span>{adults} Adults</span>
-          </DetailItem>
-          <DetailItem>
+          </DetailsItem>
+          <DetailsItem>
             <AutomaticIcon size={20} />
             <span>{capitalize(transmission)}</span>
-          </DetailItem>
-          <DetailItem>
+          </DetailsItem>
+          <DetailsItem>
             <PetrolIcon size={20} />
             <span>{capitalize(engine)}</span>
-          </DetailItem>
-          <DetailItem>
+          </DetailsItem>
+          <DetailsItem>
             <KitchenIcon size={20} />
             <span> {details.kitchen} Kitchen</span>
-          </DetailItem>
-          <DetailItem>
+          </DetailsItem>
+          <DetailsItem>
             <BedsIcon size={20} />
             <span> {details.beds} beds</span>
-          </DetailItem>
+          </DetailsItem>
+          <DetailsItem>
+            <AcIcon size={20} />
+            <span> AC </span>
+          </DetailsItem>
         </DetailsContainer>
         <Button onClick={onShowMore}>Show more</Button>
       </InfoWrapper>

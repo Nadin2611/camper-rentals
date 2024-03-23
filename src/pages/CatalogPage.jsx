@@ -8,9 +8,10 @@ import {
 
 import AdvertList from 'components/Catalog/AdvertList';
 import { CatalogPageContainer } from 'components/Container/Container.styled';
-import SideBar from 'components/SideBar';
+import Filter from 'components/Filter';
 import Loader from 'components/Loader';
 import ModalDetails from 'components/Modal/ModalDetails';
+// import { Outlet } from 'react-router-dom';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -39,11 +40,15 @@ const CatalogPage = () => {
     <Loader />
   ) : (
     <CatalogPageContainer>
-      <SideBar locations={locations} />
+      <Filter locations={locations} />
       <AdvertList adverts={adverts} onShowMore={handleShowModal} />
       {isModalOpen && (
         <ModalDetails advert={adverts[0]} closeModal={handleModalClose} />
       )}
+
+      {/* <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense> */}
     </CatalogPageContainer>
   );
 };

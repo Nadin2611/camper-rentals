@@ -89,10 +89,9 @@ export const DetailsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  align-self: stretch;
 `;
 
-export const DetailItem = styled.div`
+export const DetailsItem = styled.div`
   display: flex;
   padding: 12px 18px;
   align-items: center;
@@ -100,4 +99,6 @@ export const DetailItem = styled.div`
   border-radius: 100px;
   background: #f2f4f7;
   mix-blend-mode: multiply;
+  line-height: 1.25;
+  font-weight: 500;
 `;

@@ -2,10 +2,10 @@ import { Button } from 'components/Button/Button.styled';
 import {
   Checkbox,
   CheckboxContainer,
-  SidebarContainer,
-  SidebarForm,
-  SidebarLabel,
-  SidebarTitle,
+  FilterContainer,
+  FilterForm,
+  FilterLabel,
+  FilterTitle,
   LocationLabel,
   Option,
   Select,
@@ -13,11 +13,10 @@ import {
   HiddenCheckbox,
   TypeCheckbox,
   FormWrapper,
-} from './SideBar.styled';
+} from './Filter.styled';
 import {
   AlcoveIcon,
   AutomaticIcon,
-  ConditionerIcon,
   FullyIcon,
   KitchenIcon,
   MapPinIcon,
@@ -25,11 +24,12 @@ import {
   TvIcon,
   VanIcon,
 } from 'components/Icons';
+import AcIcon from 'components/Icons/AcIcon';
 
-const Sidebar = ({ locations }) => {
+const Filter = ({ locations }) => {
   return (
-    <SidebarContainer>
-      <SidebarForm>
+    <FilterContainer>
+      <FilterForm>
         <FormWrapper>
           <LocationLabel>Location</LocationLabel>
           <Select>
@@ -44,12 +44,12 @@ const Sidebar = ({ locations }) => {
         </FormWrapper>
 
         <FormWrapper>
-          <SidebarTitle>Filters</SidebarTitle>
-          <SidebarLabel>Vehicle equipment</SidebarLabel>
+          <FilterTitle>Filters</FilterTitle>
+          <FilterLabel>Vehicle equipment</FilterLabel>
           <CheckboxContainer>
             <Checkbox>
               <HiddenCheckbox type="checkbox" />
-              <ConditionerIcon size={32} />
+              <AcIcon size={32} />
               AC
             </Checkbox>
             <Checkbox>
@@ -76,7 +76,7 @@ const Sidebar = ({ locations }) => {
         </FormWrapper>
 
         <FormWrapper>
-          <SidebarLabel>Vehicle type</SidebarLabel>
+          <FilterLabel>Vehicle type</FilterLabel>
           <CheckboxContainer>
             <TypeCheckbox>
               <HiddenCheckbox type="checkbox" />
@@ -100,9 +100,9 @@ const Sidebar = ({ locations }) => {
         </FormWrapper>
 
         <Button type="submit">Search</Button>
-      </SidebarForm>
-    </SidebarContainer>
+      </FilterForm>
+    </FilterContainer>
   );
 };
 
-export default Sidebar;
+export default Filter;

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
 
 export const ModalBackdrop = styled.div`
   position: fixed;
@@ -116,10 +115,31 @@ export const ListItem = styled.li`
   line-height: 1.2;
 `;
 
-export const Link = styled(NavLink)`
-  text-decoration: none;
+export const Button = styled.li`
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+`;
 
-  &:hover,
-  &:focus {
+export const SideContent = styled.div`
+  overflow-y: auto;
+  max-height: 406px;
+  margin-right: -16px;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent; /* колір фону трека */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-scroll);
+    border-radius: 7px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-main);
   }
 `;

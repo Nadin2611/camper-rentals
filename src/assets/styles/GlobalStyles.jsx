@@ -10,6 +10,7 @@ const GlobalStyles = createGlobalStyle`
     --color-block: #F2F4F7;
     --color-inputs: #F7F7F7;
     --color-background: #FFFFFF;
+    --color-scroll: #d9d9d9;
 }
 
 body {
@@ -55,6 +56,7 @@ img {
 
 button {
     font-family: inherit;
+    background-color: transparent;
     border: none;
     cursor: pointer;
     padding:0
