@@ -16,10 +16,10 @@ export const Button = styled.button`
     background-color: var(--color-button-hover);
   }
 
-  //   &:disabled {
-  //     background-color: #cccccc;
-  //     cursor: not-allowed;
-  //   }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 `;
 
 export const LoadMoreBtn = styled.button`

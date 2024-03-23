@@ -106,12 +106,12 @@ const Modal = ({ advert, closeModal }) => {
         </InfoContainer>
         {showFeatures && (
           <ModalWrap>
-            <Features advert={advert} /> <BookingForm />
+            <Features advert={advert} /> <BookingForm closeModal={closeModal} />
           </ModalWrap>
         )}
         {showReviews && (
           <ModalWrap>
-            <Reviews advert={advert} /> <BookingForm />
+            <Reviews advert={advert} /> <BookingForm closeModal={closeModal} />
           </ModalWrap>
         )}
       </ModalContent>

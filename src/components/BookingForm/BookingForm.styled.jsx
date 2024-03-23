@@ -31,7 +31,7 @@ export const Input = styled.input`
   outline: none;
   letter-spacing: 0em;
   text-align: left;
-  color: var(--color-inputs);
+  color: var(--color-text);
 
   &::placeholder {
     color: rgba(16, 24, 40, 0.6);

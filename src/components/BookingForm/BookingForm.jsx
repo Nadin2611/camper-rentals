@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { toast } from 'react-hot-toast';
 import {
   FormContainer,
   Form,
@@ -9,11 +11,43 @@ import {
 } from './BookingForm.styled';
 import { Button } from 'components/Button/Button.styled';
 
-const BookingForm = () => {
-  const handleChange = event => {};
+const BookingForm = ({ closeModal }) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    bookingDate: '',
+    comment: '',
+  });
+
+  const handleChange = event => {
+    const { name, value } = event.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleDateChange = event => {
+    const selectedDate = event.target.value;
+    const today = new Date().toISOString().split('T')[0];
+
+    if (selectedDate < today) {
+      toast.error('Please select a date from today onwards!');
+      return;
+    }
+
+    setFormData(prevState => ({
+      ...prevState,
+      bookingDate: selectedDate,
+    }));
+  };
 
   const handleSubmit = event => {
     event.preventDefault();
+
+    toast.success('Form submitted successfully!');
+
+    closeModal();
   };
 
   return (
@@ -26,16 +60,17 @@ const BookingForm = () => {
           type="text"
           name="name"
           placeholder="Name"
-          // value={formData.name}
+          value={formData.name}
           onChange={handleChange}
           required
+          autoFocus
         />
         <Label htmlFor="email" />
         <Input
           type="email"
           name="email"
           placeholder="Email"
-          // value={formData.email}
+          value={formData.email}
           onChange={handleChange}
           required
         />
@@ -44,8 +79,8 @@ const BookingForm = () => {
           type="date"
           name="bookingDate"
           placeholder="Booking Date"
-          // value={formData.bookingDate}
-          onChange={handleChange}
+          value={formData.bookingDate}
+          onChange={handleDateChange}
           required
         />
         <Label htmlFor="comment" />
@@ -53,10 +88,15 @@ const BookingForm = () => {
           type="text"
           name="comment"
           placeholder="Comment"
-          // value={formData.comment}
+          value={formData.comment}
           onChange={handleChange}
         />
-        <Button type="submit">Send</Button>
+        <Button
+          type="submit"
+          disabled={!formData.name || !formData.email || !formData.bookingDate}
+        >
+          Send
+        </Button>
       </Form>
     </FormContainer>
   );
