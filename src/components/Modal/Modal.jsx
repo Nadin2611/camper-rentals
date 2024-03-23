@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-
+import { useEffect, useState } from 'react';
+import { formatPrice, reverseLocation } from '../../services';
 import {
   ModalBackdrop,
   ModalContent,
@@ -33,8 +33,8 @@ const Modal = ({ advert, closeModal }) => {
   const { _id, name, price, rating, location, description, reviews, gallery } =
     advert;
 
-  const formattedPrice = price.toFixed(2);
-  const renderLocation = location.split(', ').reverse().join(', ');
+  const formattedPrice = formatPrice(price);
+  const renderLocation = reverseLocation(location);
 
   useEffect(() => {
     const handleEscapeKey = event => {
@@ -48,6 +48,7 @@ const Modal = ({ advert, closeModal }) => {
 
   const handleCloseModal = event => {
     if (event.target === event.currentTarget) {
+      console.log('Closing modal...');
       closeModal();
       document.body.style.overflow = 'visible';
     }
@@ -66,10 +67,14 @@ const Modal = ({ advert, closeModal }) => {
   return (
     <ModalBackdrop onClick={handleCloseModal}>
       <ModalContent>
-        <CloseButton type="button" onClick={closeModal}>
+        <CloseButton
+          type="button"
+          onClick={() => {
+            closeModal();
+          }}
+        >
           <CloseIcon size={40} />
         </CloseButton>
-
         <Title style={{ marginBottom: '10px' }}>{name}</Title>
         <RatingWrapper style={{ marginBottom: '16px' }}>
           <RatingContainer>
@@ -82,7 +87,6 @@ const Modal = ({ advert, closeModal }) => {
           </Location>
         </RatingWrapper>
         <Price style={{ marginBottom: '24px' }}>&euro;{formattedPrice}</Price>
-
         <SideContent>
           <ImageList>
             {gallery.length > 0 &&

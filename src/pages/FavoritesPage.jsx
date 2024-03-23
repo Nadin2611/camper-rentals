@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { selectFavorites } from '../redux/adverts/selectors';
 import { clearFavorites } from '../redux/adverts/slice';
-import { getUniqueLocations } from 'utilities/utilities';
+import { getUniqueLocations } from 'services/locations';
 import AdvertItem from 'components/Catalog/AdvertItem';
 import AdvertList from 'components/Catalog/AdvertList';
 import { Button } from 'components/Button/Button.styled';

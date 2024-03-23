@@ -2,17 +2,18 @@ import { Button } from 'components/Button/Button.styled';
 import {
   Message,
   NoFavoritesContainer,
-  StyledLink,
+  // StyledLink,
 } from './NoFavorites.styled';
+import { Link } from 'components/Layout/Layout.styled';
 
 const NoFavoritesMessage = () => {
   return (
     <NoFavoritesContainer>
       <Message>You haven't added any campers to your favorites yet.</Message>
       <Message>Please redistribute to the catalog</Message>
-      <StyledLink to="/catalog">
+      <Link to="/catalog">
         <Button type="button">Go to Catalog</Button>
-      </StyledLink>
+      </Link>
     </NoFavoritesContainer>
   );
 };

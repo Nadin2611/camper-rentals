@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAdverts } from '../redux/adverts/operations';
 import {
   selectAdverts,
+  selectAdvertsError,
   selectAdvertsLoading,
-  selectFavorites,
+  selectTotalPages,
 } from '../redux/adverts/selectors';
-import { getUniqueLocations } from 'utilities/utilities';
+import { getUniqueLocations, handleScroll } from '../services';
 
 import AdvertList from 'components/Catalog/AdvertList';
 import {
@@ -15,51 +16,52 @@ import {
 } from 'components/Container/Container.styled';
 import Filter from 'components/Filter';
 import Loader from 'components/Loader';
-import Modal from 'components/Modal/Modal';
 import { LoadMoreBtn } from 'components/Button/Button.styled';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
   const adverts = useSelector(selectAdverts);
   const isLoading = useSelector(selectAdvertsLoading);
-  const favorites = useSelector(selectFavorites);
-  const [page, setPage] = useState(1);
-  const locations = getUniqueLocations(adverts);
+  const error = useSelector(selectAdvertsError);
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const containerRef = useRef(null);
+
+  const [page, setPage] = useState(1);
+  const [showLoadMore, setShowLoadMore] = useState(true);
+
+  const locations = getUniqueLocations(adverts);
+  const totalPage = useSelector(selectTotalPages);
 
   useEffect(() => {
+    if (page >= totalPage) {
+      setShowLoadMore(false);
+    }
     dispatch(getAdverts(page));
-  }, [dispatch, page]);
+  }, [dispatch, page, totalPage]);
 
   const handleLoadMore = () => {
+    if (page >= totalPage || adverts.length < 4) {
+      setShowLoadMore(false);
+      return;
+    }
     setPage(prevPage => prevPage + 1);
+    handleScroll(containerRef.current);
   };
-
-  const handleShowModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleModalClose = () => {
-    setIsModalOpen(false);
-  };
-
-  console.log(favorites);
 
   return isLoading ? (
     <Loader />
   ) : (
     <CatalogPageContainer>
       <Filter locations={locations} />
-      <Wrapper>
-        <AdvertList adverts={adverts} onShowMore={handleShowModal} />
-        <LoadMoreBtn type="button" onClick={() => handleLoadMore()}>
-          Load more
-        </LoadMoreBtn>
+      <Wrapper ref={containerRef}>
+        <AdvertList adverts={adverts} />
+
+        {showLoadMore && !error && adverts.length > 0 && (
+          <LoadMoreBtn type="button" onClick={handleLoadMore}>
+            Load more
+          </LoadMoreBtn>
+        )}
       </Wrapper>
-      {isModalOpen && (
-        <Modal advert={adverts[0]} closeModal={handleModalClose} />
-      )}
     </CatalogPageContainer>
   );
 };

@@ -28,7 +28,9 @@ export const Link = styled(NavLink)`
   text-decoration: none;
   transition: box-shadow 0.3s, color 0.3s, transform 0.3s;
 
-  &.active {
+  &.active {     
+    transform: scale(1.1);
+    color: var(--color-button);
   }
 
 

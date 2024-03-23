@@ -17,6 +17,7 @@ export const Image = styled.img`
   border-radius: 10px;
   width: 290px;
   height: 310px;
+  object-fit: cover;
 `;
 
 export const InfoWrapper = styled.div`
@@ -103,7 +104,7 @@ export const DetailsItem = styled.div`
   align-items: center;
   gap: 8px;
   border-radius: 100px;
-  background: #f2f4f7;
+  background: var(--color-block);
   mix-blend-mode: multiply;
   line-height: 1.25;
   font-weight: 500;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import backgroundImage from '../../assets/images/bg2.jpg';
+import backgroundImage from '../../assets/images/bg.jpg';
 
 export const Container = styled.div`
   width: 100%;
@@ -42,6 +42,5 @@ export const FavoriteContainer = styled.div`
   flex-direction: column;
   gap: 50px;
   width: 100%;
-  justify-content: center;
   align-items: center;
 `;

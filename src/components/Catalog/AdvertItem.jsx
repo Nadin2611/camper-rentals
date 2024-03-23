@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
-
+import { useState } from 'react';
 import { selectFavorites } from '../../redux/adverts/selectors';
 import { addToFavorites, removeFromFavorites } from '../../redux/adverts/slice';
-import { formatPrice, reverseLocation, capitalize } from 'utilities/utilities';
+import { formatPrice, reverseLocation, capitalize } from '../../services';
 
 import { Button } from 'components/Button/Button.styled';
 import {
@@ -24,6 +24,9 @@ import {
 } from './AdvertItem.styled';
 
 import * as Icons from '../Icons';
+import DefaultImage from 'components/DefaultImage/DefaultImage';
+
+import Modal from 'components/Modal/Modal';
 
 const {
   AdultsIcon,
@@ -37,8 +40,10 @@ const {
   AcIcon,
 } = Icons;
 
-const AdvertItem = ({ advert, onShowMore }) => {
+const AdvertItem = ({ advert }) => {
   const dispatch = useDispatch();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const favorites = useSelector(selectFavorites);
 
   const {
     name,
@@ -51,19 +56,28 @@ const AdvertItem = ({ advert, onShowMore }) => {
     engine,
     details,
   } = advert;
-
+  const isFavorite = favorites.find(item => item._id === advert._id);
   const formattedPrice = formatPrice(price);
   const renderLocation = reverseLocation(location);
 
-  const favorites = useSelector(selectFavorites);
-  const isFavorite = favorites.find(item => item._id === advert._id);
+  const openModal = () => {
+    setIsModalOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
 
-  console.log(isFavorite);
+  const closeModal = () => {
+    setIsModalOpen(false);
+    document.body.style.overflow = 'auto';
+  };
 
   return (
     <CardContainer>
       <ImageWrapper>
-        <Image src={advert.gallery[0]} alt={name} />
+        {advert.gallery && advert.gallery.length > 0 ? (
+          <Image src={advert.gallery[0]} alt={name} />
+        ) : (
+          <DefaultImage alt="no photo" />
+        )}
       </ImageWrapper>
       <InfoWrapper>
         <InfoContainer>
@@ -121,8 +135,10 @@ const AdvertItem = ({ advert, onShowMore }) => {
             <span> AC </span>
           </DetailsItem>
         </DetailsContainer>
-        <Button onClick={onShowMore}>Show more</Button>
+        <Button onClick={openModal}>Show more</Button>
       </InfoWrapper>
+
+      {isModalOpen && <Modal advert={advert} closeModal={closeModal} />}
     </CardContainer>
   );
 };
