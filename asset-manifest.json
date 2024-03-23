@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/camper-rentals/static/css/main.dad1bc5d.css",
-    "main.js": "/camper-rentals/static/js/main.9dc34121.js",
+    "main.js": "/camper-rentals/static/js/main.e6d75d11.js",
     "static/js/4.a6baa74e.chunk.js": "/camper-rentals/static/js/4.a6baa74e.chunk.js",
-    "static/js/654.34a0826d.chunk.js": "/camper-rentals/static/js/654.34a0826d.chunk.js",
+    "static/js/166.632129b6.chunk.js": "/camper-rentals/static/js/166.632129b6.chunk.js",
     "static/js/697.95d74266.chunk.js": "/camper-rentals/static/js/697.95d74266.chunk.js",
     "static/js/297.f7086325.chunk.js": "/camper-rentals/static/js/297.f7086325.chunk.js",
     "static/media/Inter-SemiBold.ttf": "/camper-rentals/static/media/Inter-SemiBold.6058d3da655fb35169c2.ttf",
@@ -13,17 +13,17 @@
     "static/media/Roboto-Medium.ttf": "/camper-rentals/static/media/Roboto-Medium.7c8d04cd831df3033c8a.ttf",
     "static/media/Roboto-Regular.ttf": "/camper-rentals/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
     "static/media/Roboto-Bold.ttf": "/camper-rentals/static/media/Roboto-Bold.f80816a5455d171f948d.ttf",
-    "static/media/sprite.svg": "/camper-rentals/static/media/sprite.814b395e9401e3191f9c06bc51090167.svg",
+    "static/media/sprite.svg": "/camper-rentals/static/media/sprite.151d731ee5cf4ed4e6c0b73e511b0f81.svg",
     "index.html": "/camper-rentals/index.html",
     "main.dad1bc5d.css.map": "/camper-rentals/static/css/main.dad1bc5d.css.map",
-    "main.9dc34121.js.map": "/camper-rentals/static/js/main.9dc34121.js.map",
+    "main.e6d75d11.js.map": "/camper-rentals/static/js/main.e6d75d11.js.map",
     "4.a6baa74e.chunk.js.map": "/camper-rentals/static/js/4.a6baa74e.chunk.js.map",
-    "654.34a0826d.chunk.js.map": "/camper-rentals/static/js/654.34a0826d.chunk.js.map",
+    "166.632129b6.chunk.js.map": "/camper-rentals/static/js/166.632129b6.chunk.js.map",
     "697.95d74266.chunk.js.map": "/camper-rentals/static/js/697.95d74266.chunk.js.map",
     "297.f7086325.chunk.js.map": "/camper-rentals/static/js/297.f7086325.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dad1bc5d.css",
-    "static/js/main.9dc34121.js"
+    "static/js/main.e6d75d11.js"
   ]
 }
