@@ -28,3 +28,10 @@ export const CatalogPageContainer = styled(Container)`
   display: flex;
   gap: 64px;
 `;
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 100px;
+`;

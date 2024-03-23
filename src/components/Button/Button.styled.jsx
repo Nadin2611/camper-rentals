@@ -17,7 +17,18 @@ export const Button = styled.button`
   }
 
   //   &:disabled {
-  //     background-color: #cccccc; /* Змініть колір для вимкненої кнопки за вашим бажанням */
+  //     background-color: #cccccc;
   //     cursor: not-allowed;
   //   }
+`;
+
+export const LoadMoreBtn = styled.button`
+  padding: 16px 32px;
+  width: 147px;
+  align-items: center;
+  border-radius: 200px;
+  border: 1px solid rgba(71, 84, 103, 0.2);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.08px;
 `;

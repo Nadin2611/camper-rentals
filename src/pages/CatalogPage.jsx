@@ -7,29 +7,34 @@ import {
 } from '../redux/adverts/selectors';
 
 import AdvertList from 'components/Catalog/AdvertList';
-import { CatalogPageContainer } from 'components/Container/Container.styled';
+import {
+  CatalogPageContainer,
+  Wrapper,
+} from 'components/Container/Container.styled';
 import Filter from 'components/Filter';
 import Loader from 'components/Loader';
 import ModalDetails from 'components/Modal/ModalDetails';
-// import { Outlet } from 'react-router-dom';
+import { LoadMoreBtn } from 'components/Button/Button.styled';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
   const adverts = useSelector(selectAdverts);
   const isLoading = useSelector(selectAdvertsLoading);
+  const [page, setPage] = useState(1);
   const locations = [...new Set(adverts.map(advert => advert.location))];
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  console.log(adverts);
-
   useEffect(() => {
-    dispatch(getAdverts());
-  }, [dispatch]);
+    dispatch(getAdverts(page));
+  }, [dispatch, page]);
+
+  const handleLoadMore = () => {
+    setPage(prevPage => prevPage + 1);
+  };
 
   const handleShowModal = () => {
     setIsModalOpen(true);
-    console.log(locations);
   };
 
   const handleModalClose = () => {
@@ -41,14 +46,15 @@ const CatalogPage = () => {
   ) : (
     <CatalogPageContainer>
       <Filter locations={locations} />
-      <AdvertList adverts={adverts} onShowMore={handleShowModal} />
+      <Wrapper>
+        <AdvertList adverts={adverts} onShowMore={handleShowModal} />
+        <LoadMoreBtn type="button" onClick={() => handleLoadMore()}>
+          Load more
+        </LoadMoreBtn>
+      </Wrapper>
       {isModalOpen && (
         <ModalDetails advert={adverts[0]} closeModal={handleModalClose} />
       )}
-
-      {/* <Suspense fallback={<Loader />}>
-        <Outlet />
-      </Suspense> */}
     </CatalogPageContainer>
   );
 };
