@@ -1,4 +1,5 @@
 export { default as AdultsIcon } from './AdultsIcon';
+export { default as AcIcon } from './AcIcon';
 export { default as AlcoveIcon } from './AlcoveIcon';
 export { default as AutomaticIcon } from './AutomaticIcon';
 export { default as BedsIcon } from './BedsIcon';

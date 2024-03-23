@@ -76,7 +76,7 @@ export const ListItem = styled.li`
   line-height: 1.2;
 `;
 
-export const Button = styled.li`
+export const Button = styled.button`
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;

@@ -4,7 +4,9 @@ import { getAdverts } from '../redux/adverts/operations';
 import {
   selectAdverts,
   selectAdvertsLoading,
+  selectFavorites,
 } from '../redux/adverts/selectors';
+import { getUniqueLocations } from 'utilities/utilities';
 
 import AdvertList from 'components/Catalog/AdvertList';
 import {
@@ -20,8 +22,9 @@ const CatalogPage = () => {
   const dispatch = useDispatch();
   const adverts = useSelector(selectAdverts);
   const isLoading = useSelector(selectAdvertsLoading);
+  const favorites = useSelector(selectFavorites);
   const [page, setPage] = useState(1);
-  const locations = [...new Set(adverts.map(advert => advert.location))];
+  const locations = getUniqueLocations(adverts);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -40,6 +43,8 @@ const CatalogPage = () => {
   const handleModalClose = () => {
     setIsModalOpen(false);
   };
+
+  console.log(favorites);
 
   return isLoading ? (
     <Loader />

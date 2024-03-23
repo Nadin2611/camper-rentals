@@ -56,6 +56,13 @@ export const Price = styled.h2`
 export const FavoriteButton = styled.button`
   background: none;
   margin-left: 11px;
+
+  svg {
+    fill: ${({ $isFavorite }) =>
+      $isFavorite ? 'var(--color-button)' : 'transparent'};
+    stroke: ${({ $isFavorite }) =>
+      $isFavorite ? 'none' : 'var(--color-text)'};
+  }
 `;
 
 export const RatingWrapper = styled.div`

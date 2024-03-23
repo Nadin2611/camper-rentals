@@ -1,4 +1,9 @@
-// import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { selectFavorites } from '../../redux/adverts/selectors';
+import { addToFavorites, removeFromFavorites } from '../../redux/adverts/slice';
+import { formatPrice, reverseLocation, capitalize } from 'utilities/utilities';
+
 import { Button } from 'components/Button/Button.styled';
 import {
   CardContainer,
@@ -19,7 +24,6 @@ import {
 } from './AdvertItem.styled';
 
 import * as Icons from '../Icons';
-import AcIcon from 'components/Icons/AcIcon';
 
 const {
   AdultsIcon,
@@ -30,10 +34,11 @@ const {
   HeartIcon,
   StarIcon,
   MapPinIcon,
+  AcIcon,
 } = Icons;
 
 const AdvertItem = ({ advert, onShowMore }) => {
-  // const [isFavorite, setIsFavorite] = useState(false);
+  const dispatch = useDispatch();
 
   const {
     name,
@@ -47,11 +52,11 @@ const AdvertItem = ({ advert, onShowMore }) => {
     details,
   } = advert;
 
-  const formattedPrice = price.toFixed(2);
-  const renderLocation = location.split(', ').reverse().join(', ');
-  const capitalize = string => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  };
+  const formattedPrice = formatPrice(price);
+  const renderLocation = reverseLocation(location);
+
+  const favorites = useSelector(selectFavorites);
+  const isFavorite = favorites.find(item => item._id === advert._id);
 
   return (
     <CardContainer>
@@ -63,7 +68,14 @@ const AdvertItem = ({ advert, onShowMore }) => {
           <TitleContainer>
             <Title>{name}</Title>
             <Price>&euro;{formattedPrice}</Price>
-            <FavoriteButton>
+            <FavoriteButton
+              onClick={() =>
+                isFavorite
+                  ? dispatch(removeFromFavorites(advert._id))
+                  : dispatch(addToFavorites(advert))
+              }
+              $isFavorite={!!isFavorite}
+            >
               <HeartIcon size={24} />
             </FavoriteButton>
           </TitleContainer>
