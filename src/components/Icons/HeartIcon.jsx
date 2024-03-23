@@ -3,7 +3,7 @@ import sprite from '../../assets/images/sprite.svg';
 const HeartIcon = ({ size, fill }) => {
   return (
     <svg width={size} height={size} fill={fill}>
-      <use xlinkHref={`${sprite}#icon-heart`}></use>
+      <use href={`${sprite}#icon-heart`}></use>
     </svg>
   );
 };

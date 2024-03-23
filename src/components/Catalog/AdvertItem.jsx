@@ -58,6 +58,8 @@ const AdvertItem = ({ advert, onShowMore }) => {
   const favorites = useSelector(selectFavorites);
   const isFavorite = favorites.find(item => item._id === advert._id);
 
+  console.log(isFavorite);
+
   return (
     <CardContainer>
       <ImageWrapper>
@@ -74,7 +76,7 @@ const AdvertItem = ({ advert, onShowMore }) => {
                   ? dispatch(removeFromFavorites(advert._id))
                   : dispatch(addToFavorites(advert))
               }
-              $isFavorite={!!isFavorite}
+              $isFavorite={isFavorite}
             >
               <HeartIcon size={24} />
             </FavoriteButton>

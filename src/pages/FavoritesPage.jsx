@@ -5,12 +5,13 @@ import { getUniqueLocations } from 'utilities/utilities';
 import AdvertItem from 'components/Catalog/AdvertItem';
 import AdvertList from 'components/Catalog/AdvertList';
 import { Button } from 'components/Button/Button.styled';
-import { Link } from 'react-router-dom';
+
 import {
   CatalogPageContainer,
   FavoriteContainer,
 } from 'components/Container/Container.styled';
 import Filter from 'components/Filter';
+import NoFavorites from 'components/NoFavorites';
 
 const FavoritesPage = () => {
   const favorites = useSelector(selectFavorites);
@@ -35,10 +36,9 @@ const FavoritesPage = () => {
           </Button>
         </FavoriteContainer>
       ) : (
-        <>
-          <p>No favorites selected.</p>
-          <Link to="/catalog">Go to Catalog</Link>
-        </>
+        <FavoriteContainer>
+          <NoFavorites />
+        </FavoriteContainer>
       )}
     </CatalogPageContainer>
   );

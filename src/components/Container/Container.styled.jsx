@@ -41,4 +41,7 @@ export const FavoriteContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 50px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 `;
