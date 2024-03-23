@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/697.95d74266.chunk.js","mappings":"8IAEA,UAFqB,WAAO,C","sources":["pages/FavoritesPage.jsx"],"sourcesContent":["const FavoritePage = () => {};\n\nexport default FavoritePage;\n"],"names":[],"sourceRoot":""}
