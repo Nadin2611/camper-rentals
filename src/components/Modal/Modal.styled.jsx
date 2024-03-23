@@ -28,45 +28,6 @@ export const CloseButton = styled.button`
   backgroud-color: transparent;
 `;
 
-export const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-`;
-
-export const Input = styled.input`
-  padding: 18px;
-  border-radius: 10px;
-  background: rgba(247, 247, 247, 1);
-  border: none;
-  outline: none;
-  letter-spacing: 0em;
-  text-align: left;
-  color: var(--color-inputs);
-
-  &::placeholder {
-    color: rgba(16, 24, 40, 0.6);
-    line-height: 1.25;
-  }
-`;
-
-export const TextArea = styled.textarea`
-height: 114px;
-padding: 18px;
-border-radius: 10px;
-background: rgba(247, 247, 247, 1);
-border: none;
-outline: none;
-letter-spacing: 0em;
-text-align: left;
-color: rgba(16, 24, 40, 0.6);
-
-&::placeholder {
-  letter-spacing: 0em;
-  color: rgba(16, 24, 40, 0.6);
-
-`;
-
 export const ImageList = styled.ul`
   display: flex;
   gap: 16px;
@@ -142,4 +103,10 @@ export const SideContent = styled.div`
   &::-webkit-scrollbar-thumb:hover {
     background-color: var(--color-main);
   }
+`;
+
+export const ModalWrap = styled.div`
+  display: flex;
+  padding-top: 68px;
+  gap: 24px;
 `;

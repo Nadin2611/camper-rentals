@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const FeaturesContainer = styled.div`
   max-width: 430px;
-  padding-top: 68px;
 `;
 export const DetailsWrapper = styled.div`
   display: flex;

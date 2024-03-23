@@ -1,80 +1,122 @@
-// import React, { useState } from 'react';
-// import {
-//   ModalBackdrop,
-//   ModalContent,
-//   CloseButton,
-//   Form,
-//   Input,
-//   TextArea,
-// } from './Modal.styled';
-// import { Button } from 'components/Button/Button.styled';
+import React, { useEffect, useState } from 'react';
 
-// const Modal = ({ onClose }) => {
-//   const [formData, setFormData] = useState({
-//     name: '',
-//     email: '',
-//     bookingDate: '',
-//     comment: '',
-//   });
+import {
+  ModalBackdrop,
+  ModalContent,
+  CloseButton,
+  SideContent,
+  ImageList,
+  ImageItem,
+  Description,
+  InfoContainer,
+  List,
+  ListItem,
+  Button,
+  ModalWrap,
+} from './Modal.styled';
 
-//   const handleChange = e => {
-//     const { name, value } = e.target;
-//     setFormData({
-//       ...formData,
-//       [name]: value,
-//     });
-//   };
+import { CloseIcon, MapPinIcon, StarIcon } from 'components/Icons';
+import {
+  Location,
+  Price,
+  RatingWrapper,
+  RatingContainer,
+  Title,
+} from 'components/Catalog/AdvertItem.styled';
+import Features from 'components/Features';
+import Reviews from 'components/Reviews';
+import BookingForm from 'components/BookingForm/BookingForm';
 
-//   const handleSubmit = e => {
-//     e.preventDefault();
-//     // Ваша логіка для обробки відправки форми
-//     // Наприклад, валідація та відправка даних
-//     // Після успішної відправки можна викликати onClose для закриття модального вікна
-//   };
+const Modal = ({ advert, closeModal }) => {
+  const [showFeatures, setShowFeatures] = useState(false);
+  const [showReviews, setShowReviews] = useState(false);
+  const { _id, name, price, rating, location, description, reviews, gallery } =
+    advert;
 
-//   return (
-//     <ModalBackdrop>
-//       <ModalContent>
-//         <CloseButton onClick={onClose}>&times;</CloseButton>
-//         <h2>Book your campervan now</h2>
-//         <p>Stay connected! We are always ready to help you.</p>
-//         <Form onSubmit={handleSubmit}>
-//           <Input
-//             type="text"
-//             name="name"
-//             placeholder="Name"
-//             value={formData.name}
-//             onChange={handleChange}
-//             required
-//           />
-//           <Input
-//             type="email"
-//             name="email"
-//             placeholder="Email"
-//             value={formData.email}
-//             onChange={handleChange}
-//             required
-//           />
-//           <Input
-//             type="date"
-//             name="bookingDate"
-//             placeholder="Booking Date"
-//             value={formData.bookingDate}
-//             onChange={handleChange}
-//             required
-//           />
-//           <TextArea
-//             type="text"
-//             name="comment"
-//             placeholder="Comment"
-//             value={formData.comment}
-//             onChange={handleChange}
-//           />
-//           <Button type="submit">Send</Button>
-//         </Form>
-//       </ModalContent>
-//     </ModalBackdrop>
-//   );
-// };
+  const formattedPrice = price.toFixed(2);
+  const renderLocation = location.split(', ').reverse().join(', ');
 
-// export default Modal;
+  useEffect(() => {
+    const handleEscapeKey = event => {
+      if (event.code === 'Escape') closeModal();
+    };
+
+    window.addEventListener('keydown', handleEscapeKey);
+
+    return () => window.removeEventListener('keydown', handleEscapeKey);
+  }, [closeModal]);
+
+  const handleCloseModal = event => {
+    if (event.target === event.currentTarget) {
+      closeModal();
+      document.body.style.overflow = 'visible';
+    }
+  };
+
+  const handleFeaturesClick = () => {
+    setShowFeatures(true);
+    setShowReviews(false);
+  };
+
+  const handleReviewsClick = () => {
+    setShowFeatures(false);
+    setShowReviews(true);
+  };
+
+  return (
+    <ModalBackdrop onClick={handleCloseModal}>
+      <ModalContent>
+        <CloseButton type="button" onClick={closeModal}>
+          <CloseIcon size={40} />
+        </CloseButton>
+
+        <Title style={{ marginBottom: '10px' }}>{name}</Title>
+        <RatingWrapper style={{ marginBottom: '16px' }}>
+          <RatingContainer>
+            <StarIcon size={20} />
+            <span>{`${rating}(${reviews.length} Reviews)`}</span>
+          </RatingContainer>
+          <Location>
+            <MapPinIcon size={20} />
+            <span>{renderLocation}</span>
+          </Location>
+        </RatingWrapper>
+        <Price style={{ marginBottom: '24px' }}>&euro;{formattedPrice}</Price>
+
+        <SideContent>
+          <ImageList>
+            {gallery.length > 0 &&
+              gallery.map((link, index) => (
+                <ImageItem key={`${_id}/${index}`}>
+                  <img src={link} alt={name} />
+                </ImageItem>
+              ))}
+          </ImageList>
+          <Description>{description}</Description>
+        </SideContent>
+        <InfoContainer>
+          <List>
+            <ListItem>
+              <Button onClick={handleFeaturesClick}>Features</Button>
+            </ListItem>
+            <ListItem>
+              <Button onClick={handleReviewsClick}>Reviews</Button>
+            </ListItem>
+          </List>
+        </InfoContainer>
+        {showFeatures && (
+          <ModalWrap>
+            <Features advert={advert} /> <BookingForm />
+          </ModalWrap>
+        )}
+        {showReviews && (
+          <ModalWrap>
+            <Reviews advert={advert} /> <BookingForm />
+          </ModalWrap>
+        )}
+      </ModalContent>
+    </ModalBackdrop>
+  );
+};
+
+export default Modal;

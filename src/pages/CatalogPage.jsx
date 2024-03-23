@@ -13,7 +13,7 @@ import {
 } from 'components/Container/Container.styled';
 import Filter from 'components/Filter';
 import Loader from 'components/Loader';
-import ModalDetails from 'components/Modal/ModalDetails';
+import Modal from 'components/Modal/Modal';
 import { LoadMoreBtn } from 'components/Button/Button.styled';
 
 const CatalogPage = () => {
@@ -53,7 +53,7 @@ const CatalogPage = () => {
         </LoadMoreBtn>
       </Wrapper>
       {isModalOpen && (
-        <ModalDetails advert={adverts[0]} closeModal={handleModalClose} />
+        <Modal advert={adverts[0]} closeModal={handleModalClose} />
       )}
     </CatalogPageContainer>
   );
