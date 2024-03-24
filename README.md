@@ -29,17 +29,19 @@ preferences and travel needs.
 
 <a name="features"></a>
 
-1. **Browse Available Campers** Explore a diverse range of campers available for
-   rent in Ukraine. Each listing provides detailed information including photos,
-   amenities, and rental specifications.
+1. **View available campers**<br> Get acquainted with the variety of campers
+   that can be rented from us throughout Ukraine. Each ad contains detailed
+   information including photos, camper specifications, amenities and rental
+   terms.<br><br>
 
-2. **Favorite Functionality** Add campers to your favorites list for easy access
-   and comparison. Manage favorite campers conveniently from your profile.
+2. **Favorite offers**<br> Add campers to the list of favorites so as not to
+   lose options that are interesting to you. Conveniently manage your favorite
+   campers from your profile.<br><br>
 
-3. **Advanced Filtering** Utilize advanced filtering options to find the perfect
-   camper. Filters include equipment (e.g., kitchen facilities, sleeping
-   capacity), location, and type of van (e.g., fully integrated, camper van,
-   alcove).
+3. **Search**<br> Use the advanced search filter options to find the perfect
+   camper just for you. Filters include rental location, equipment (kitchen,
+   bed, shower/WC, air conditioner, TV, cd, etc.) and type of camper (van, fully
+   integrated or alcove).
 
 ## How to Use
 
@@ -73,7 +75,7 @@ Clone the repository from GitHub using the following command:
 
    in your terminal.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top"><img src="./src/assets/images/arrow.svg" alt="Back to Top" width="20"></a>)</p>
 
 4. Once the dependencies are installed, start the application using:
 
