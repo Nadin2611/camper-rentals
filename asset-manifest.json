@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/camper-rentals/static/css/main.dad1bc5d.css",
-    "main.js": "/camper-rentals/static/js/main.858c9ead.js",
+    "main.js": "/camper-rentals/static/js/main.e58b226b.js",
     "static/js/745.f591a81b.chunk.js": "/camper-rentals/static/js/745.f591a81b.chunk.js",
     "static/js/69.e3b80b22.chunk.js": "/camper-rentals/static/js/69.e3b80b22.chunk.js",
     "static/js/994.1d725bc2.chunk.js": "/camper-rentals/static/js/994.1d725bc2.chunk.js",
     "static/js/667.cd24b93c.chunk.js": "/camper-rentals/static/js/667.cd24b93c.chunk.js",
-    "static/js/84.1584da3d.chunk.js": "/camper-rentals/static/js/84.1584da3d.chunk.js",
+    "static/js/84.90b2eada.chunk.js": "/camper-rentals/static/js/84.90b2eada.chunk.js",
     "static/media/Inter-SemiBold.ttf": "/camper-rentals/static/media/Inter-SemiBold.6058d3da655fb35169c2.ttf",
     "static/media/Inter-Medium.ttf": "/camper-rentals/static/media/Inter-Medium.3f7acfe50aad7ad68548.ttf",
     "static/media/Inter-Regular.ttf": "/camper-rentals/static/media/Inter-Regular.9ca9ba81e9dcaa12b3a1.ttf",
@@ -18,15 +18,15 @@
     "static/media/sprite.svg": "/camper-rentals/static/media/sprite.7a0e1f1f41a3604e2e38268d039bcd6e.svg",
     "index.html": "/camper-rentals/index.html",
     "main.dad1bc5d.css.map": "/camper-rentals/static/css/main.dad1bc5d.css.map",
-    "main.858c9ead.js.map": "/camper-rentals/static/js/main.858c9ead.js.map",
+    "main.e58b226b.js.map": "/camper-rentals/static/js/main.e58b226b.js.map",
     "745.f591a81b.chunk.js.map": "/camper-rentals/static/js/745.f591a81b.chunk.js.map",
     "69.e3b80b22.chunk.js.map": "/camper-rentals/static/js/69.e3b80b22.chunk.js.map",
     "994.1d725bc2.chunk.js.map": "/camper-rentals/static/js/994.1d725bc2.chunk.js.map",
     "667.cd24b93c.chunk.js.map": "/camper-rentals/static/js/667.cd24b93c.chunk.js.map",
-    "84.1584da3d.chunk.js.map": "/camper-rentals/static/js/84.1584da3d.chunk.js.map"
+    "84.90b2eada.chunk.js.map": "/camper-rentals/static/js/84.90b2eada.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dad1bc5d.css",
-    "static/js/main.858c9ead.js"
+    "static/js/main.e58b226b.js"
   ]
 }
