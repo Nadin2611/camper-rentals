@@ -4,9 +4,10 @@ export const NameWrap = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
+  margin-bottom: 16px;
 `;
 
-export const Icon = styled.div`
+export const Avatar = styled.div`
   width: 60px;
   height: 60px;
   background-color: var(--color-block);
@@ -32,4 +33,14 @@ export const Rating = styled.div``;
 
 export const Comment = styled.p`
   color: var(--color-main);
+`;
+
+export const StarsList = styled.ul`
+  display: flex;
+  align-items: center;
+  gap: 4px;
+`;
+
+export const ReviewsWrap = styled.div`
+  margin-bottom: 24px;
 `;

@@ -32,11 +32,11 @@ const Filter = ({ locations }) => {
       <FilterForm>
         <FormWrapper>
           <LocationLabel>Location</LocationLabel>
+          <MapPinIcon size={20} />
           <Select>
             <OptionSelect value="city">City</OptionSelect>
             {locations.map((location, index) => (
               <Option key={index}>
-                <MapPinIcon size={20} />
                 {location.split(',').reverse().join(',')}
               </Option>
             ))}
@@ -48,27 +48,27 @@ const Filter = ({ locations }) => {
           <FilterLabel>Vehicle equipment</FilterLabel>
           <CheckboxContainer>
             <Checkbox>
-              <HiddenCheckbox type="checkbox" />
+              <HiddenCheckbox type="checkbox" name="AC" />
               <AcIcon size={32} />
               AC
             </Checkbox>
             <Checkbox>
-              <HiddenCheckbox type="checkbox" />
+              <HiddenCheckbox type="checkbox" name="Automatic" />
               <AutomaticIcon size={32} />
               Automatic
             </Checkbox>
             <Checkbox>
-              <HiddenCheckbox type="checkbox" />
+              <HiddenCheckbox type="checkbox" name="Kitchen" />
               <KitchenIcon size={32} />
               Kitchen
             </Checkbox>
             <Checkbox>
-              <HiddenCheckbox type="checkbox" />
+              <HiddenCheckbox type="checkbox" name="TV" />
               <TvIcon size={32} />
               TV
             </Checkbox>
             <Checkbox>
-              <HiddenCheckbox type="checkbox" />
+              <HiddenCheckbox type="checkbox" name="Shower/WC" />
               <ShowerIcon size={32} />
               Shower/WC
             </Checkbox>

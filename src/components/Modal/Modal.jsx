@@ -28,8 +28,11 @@ import Reviews from 'components/Reviews';
 import BookingForm from 'components/BookingForm/BookingForm';
 
 const Modal = ({ advert, closeModal }) => {
-  const [showFeatures, setShowFeatures] = useState(false);
-  const [showReviews, setShowReviews] = useState(false);
+  // const [showFeatures, setShowFeatures] = useState(false);
+  // const [showReviews, setShowReviews] = useState(false);
+  const [isFeaturesActive, setIsFeaturesActive] = useState(false);
+  const [isReviewsActive, setIsReviewsActive] = useState(false);
+
   const { _id, name, price, rating, location, description, reviews, gallery } =
     advert;
 
@@ -48,20 +51,29 @@ const Modal = ({ advert, closeModal }) => {
 
   const handleCloseModal = event => {
     if (event.target === event.currentTarget) {
-      console.log('Closing modal...');
       closeModal();
       document.body.style.overflow = 'visible';
     }
   };
 
-  const handleFeaturesClick = () => {
-    setShowFeatures(true);
-    setShowReviews(false);
+  // const handleFeaturesClick = () => {
+  //   setShowFeatures(true);
+  //   setShowReviews(false);
+  // };
+
+  // const handleReviewsClick = () => {
+  //   setShowFeatures(false);
+  //   setShowReviews(true);
+  // };
+
+  const toggleFeatures = () => {
+    setIsFeaturesActive(!isFeaturesActive);
+    setIsReviewsActive(false);
   };
 
-  const handleReviewsClick = () => {
-    setShowFeatures(false);
-    setShowReviews(true);
+  const toggleReviews = () => {
+    setIsReviewsActive(!isReviewsActive);
+    setIsFeaturesActive(false);
   };
 
   return (
@@ -96,28 +108,34 @@ const Modal = ({ advert, closeModal }) => {
                 </ImageItem>
               ))}
           </ImageList>
-          <Description>{description}</Description>
+          <Description>{description}</Description>{' '}
+          <InfoContainer>
+            <List>
+              <ListItem>
+                <Button onClick={toggleFeatures} active={isFeaturesActive}>
+                  Features
+                </Button>
+              </ListItem>
+              <ListItem>
+                <Button onClick={toggleReviews} active={isReviewsActive}>
+                  Reviews
+                </Button>
+              </ListItem>
+            </List>
+          </InfoContainer>
+          {isFeaturesActive && (
+            <ModalWrap>
+              <Features advert={advert} />
+              <BookingForm closeModal={closeModal} />
+            </ModalWrap>
+          )}
+          {isReviewsActive && (
+            <ModalWrap>
+              <Reviews advert={advert} />
+              <BookingForm closeModal={closeModal} />
+            </ModalWrap>
+          )}
         </SideContent>
-        <InfoContainer>
-          <List>
-            <ListItem>
-              <Button onClick={handleFeaturesClick}>Features</Button>
-            </ListItem>
-            <ListItem>
-              <Button onClick={handleReviewsClick}>Reviews</Button>
-            </ListItem>
-          </List>
-        </InfoContainer>
-        {showFeatures && (
-          <ModalWrap>
-            <Features advert={advert} /> <BookingForm closeModal={closeModal} />
-          </ModalWrap>
-        )}
-        {showReviews && (
-          <ModalWrap>
-            <Reviews advert={advert} /> <BookingForm closeModal={closeModal} />
-          </ModalWrap>
-        )}
       </ModalContent>
     </ModalBackdrop>
   );

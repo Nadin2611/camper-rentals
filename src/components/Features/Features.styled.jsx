@@ -7,6 +7,7 @@ export const DetailsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  margin-bottom: 44px;
 `;
 
 export const VehicleWrapper = styled.div`

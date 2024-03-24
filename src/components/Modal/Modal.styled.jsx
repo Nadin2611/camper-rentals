@@ -77,9 +77,27 @@ export const ListItem = styled.li`
 `;
 
 export const Button = styled.button`
+  position: relative;
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
+  transition: color 0.3s;
+
+  &.active::after {
+    content: '';
+    position: absolute;
+    background-color: var(--color-button);
+    width: 100%;
+    top: 45px;
+    height: 5px;
+    border: 5px 0px 0px 0px;
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--color-button);
+    width: 100%;
+  }
 `;
 
 export const SideContent = styled.div`
@@ -92,7 +110,7 @@ export const SideContent = styled.div`
   }
 
   &::-webkit-scrollbar-track {
-    background: transparent; /* колір фону трека */
+    background: transparent;
   }
 
   &::-webkit-scrollbar-thumb {

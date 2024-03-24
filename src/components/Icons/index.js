@@ -13,6 +13,7 @@ export { default as GasIcon } from './GasIcon';
 export { default as HeartIcon } from './HeartIcon';
 export { default as HobIcon } from './HobIcon';
 export { default as KitchenIcon } from './KitchenIcon';
+export { default as LogoIcon } from './LogoIcon';
 export { default as MapPinIcon } from './MapPinIcon';
 export { default as MicrowaveIcon } from './MicrowaveIcon';
 export { default as PetrolIcon } from './PetrolIcon';

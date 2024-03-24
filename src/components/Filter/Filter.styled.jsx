@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
-export const FilterContainer = styled.div`
-  width: 360px;
-`;
+export const FilterContainer = styled.div``;
 
 export const FilterForm = styled.form`
   display: flex;
@@ -18,11 +16,12 @@ export const FilterForm = styled.form`
 export const LocationLabel = styled.label`
   color: rgba(16, 24, 40, 0.6);
   font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 `;
 
-export const FormWrapper = styled.div`
-  width: 100%;
-`;
+export const FormWrapper = styled.div``;
 
 export const Select = styled.select`
   display: flex;
@@ -30,6 +29,7 @@ export const Select = styled.select`
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
+  width: 360px;
   border: none;
   border-radius: 10px;
   background: var(--color-inputs);
@@ -39,11 +39,13 @@ export const OptionList = styled.ul`
   list-style-type: none;
   margin: 0;
   padding: 0;
+  width: 100%;
 `;
 
 export const OptionSelect = styled.option`
   color: rgba(16, 24, 40, 0.6);
   line-height: 1.25;
+  width: 100%;
 `;
 
 export const SelectIcon = styled.div`

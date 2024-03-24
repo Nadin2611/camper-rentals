@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import backgroundImage from '../../assets/images/bg.jpg';
 
 export const Container = styled.div`
-  width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   padding-left: 64px;
@@ -43,4 +42,5 @@ export const FavoriteContainer = styled.div`
   gap: 50px;
   width: 100%;
   align-items: center;
+  margin-bottom: 100px;
 `;

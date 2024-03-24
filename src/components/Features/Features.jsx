@@ -1,4 +1,5 @@
 import { DetailsItem } from 'components/Catalog/AdvertItem.styled';
+import { capitalize } from '../../services';
 import {
   AdultsIcon,
   AutomaticIcon,
@@ -35,10 +36,6 @@ const Features = ({ advert }) => {
     consumption,
     details,
   } = advert;
-
-  const capitalize = string => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  };
 
   return (
     <FeaturesContainer>

@@ -59,7 +59,8 @@ export const FavoriteButton = styled.button`
   margin-left: 11px;
 
   svg {
-    fill: ${({ $isFavorite }) => ($isFavorite ? 'red' : 'transparent')};
+    fill: ${({ $isFavorite }) =>
+      $isFavorite ? 'var(--color-button)' : 'transparent'};
     stroke: ${({ $isFavorite }) =>
       $isFavorite ? 'none' : 'var(--color-text)'};
   }
