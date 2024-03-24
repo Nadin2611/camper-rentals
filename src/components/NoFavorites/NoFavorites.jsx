@@ -2,7 +2,6 @@ import { Button } from 'components/Button/Button.styled';
 import {
   Message,
   NoFavoritesContainer,
-  // StyledLink,
 } from './NoFavorites.styled';
 import { Link } from 'components/Layout/Layout.styled';
 

@@ -31,8 +31,6 @@ const CatalogPage = () => {
   const isLoading = useSelector(selectAdvertsLoading);
   const error = useSelector(selectAdvertsError);
 
-  console.log(adverts);
-
   useEffect(() => {
     dispatch(getAdverts(currentPage));
   }, [dispatch, currentPage]);

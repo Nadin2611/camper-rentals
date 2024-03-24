@@ -90,10 +90,16 @@ const BookingForm = ({ closeModal }) => {
           placeholder="Comment"
           value={formData.comment}
           onChange={handleChange}
+          required
         />
         <Button
           type="submit"
-          disabled={!formData.name || !formData.email || !formData.bookingDate}
+          disabled={
+            !formData.name ||
+            !formData.email ||
+            !formData.bookingDate ||
+            !formData.comment
+          }
         >
           Send
         </Button>

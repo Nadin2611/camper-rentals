@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import { NavLink } from 'react-router-dom';
 
 export const NoFavoritesContainer = styled.div`
   width: 100%;
@@ -14,10 +13,3 @@ export const NoFavoritesContainer = styled.div`
 export const Message = styled.p`
   font-size: 28px;
 `;
-
-// export const StyledLink = styled(NavLink)`
-//   font-size: 16px;
-//   text-decoration: none;
-//   margin-top: 8px;
-//   display: inline-block;
-// `;
