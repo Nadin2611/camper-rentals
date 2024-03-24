@@ -89,9 +89,7 @@ export const Button = styled.button`
     color: var(--color-button);
   }
 
-  ${props =>
-    props.active &&
-    `
+  &.active {
     &::after {
       content: '';
       position: absolute;
@@ -102,7 +100,7 @@ export const Button = styled.button`
       height: 5px;
       border-radius: 5px 5px 0 0;
     }
-  `}
+  }
 `;
 
 export const SideContent = styled.div`

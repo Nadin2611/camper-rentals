@@ -95,7 +95,7 @@ const Modal = ({ advert, closeModal }) => {
               <ListItem>
                 <Button
                   onClick={handleFeaturesClick}
-                  active={activeTab === 'features'}
+                  className={activeTab === 'features' ? 'active' : ''}
                 >
                   Features
                 </Button>
@@ -103,7 +103,7 @@ const Modal = ({ advert, closeModal }) => {
               <ListItem>
                 <Button
                   onClick={handleReviewsClick}
-                  active={activeTab === 'reviews'}
+                  className={activeTab === 'reviews' ? 'active' : ''}
                 >
                   Reviews
                 </Button>
