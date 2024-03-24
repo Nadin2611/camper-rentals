@@ -27,7 +27,6 @@ export const LocationLabel = styled.label`
     top: 50px;
     left: 15px;
     stroke: rgba(16, 24, 40, 0.6);
-    z-index: 1;
   }
 `;
 

@@ -20,6 +20,7 @@ export const ModalContent = styled.div`
   border-radius: 20px;
   border: 1px solid rgba(16, 24, 40, 0.2);
   background: var(--color-background);
+  z-index: 100;
 `;
 
 export const CloseButton = styled.button`

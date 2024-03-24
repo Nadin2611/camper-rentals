@@ -3,10 +3,10 @@ import styled from 'styled-components';
 export const WelcomeContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding-top: 100px;
-  padding-left: 70px;
+  padding-top: 160px;
+  padding-left: 100px;
   color: var(--color-background);
-  max-width: 600px;
+  max-width: 800px;
   text-align: center;
   align-items: center;
   gap: 30px;
@@ -19,7 +19,7 @@ export const TextContainer = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 36px;
+  font-size: 40px;
   color: var(--color-button-hover);
   text-align: center;
   text-shadow: -0.5px -0.5px 0 rgba(255, 255, 255, 0.5),
@@ -40,5 +40,5 @@ export const TextWrap = styled.div`
 
 export const Paragraph = styled.p`
   text-align: start;
-  font-size: 14px;
+  font-size: 20px;
 `;
