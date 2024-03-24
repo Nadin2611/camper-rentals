@@ -4,8 +4,7 @@ import backgroundImage from '../../assets/images/bg.jpg';
 export const Container = styled.div`
   max-width: 1440px;
   margin: 0 auto;
-  padding-left: 64px;
-  padding-right: 64px;
+  padding: 100px 64px 100px 64px;
 `;
 
 export const HomePageContainer = styled.div`
@@ -23,7 +22,6 @@ export const HomePageContainer = styled.div`
 `;
 
 export const CatalogPageContainer = styled(Container)`
-  padding-top: 100px;
   display: flex;
   gap: 64px;
 `;
@@ -33,7 +31,6 @@ export const Wrapper = styled.div`
   flex-direction: column;
   gap: 50px;
   align-items: center;
-  margin-bottom: 100px;
 `;
 
 export const FavoriteContainer = styled.div`

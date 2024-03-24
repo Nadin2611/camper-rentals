@@ -26,7 +26,7 @@ export const CloseButton = styled.button`
   position: absolute;
   top: 20px;
   right: 20px;
-  backgroud-color: transparent;
+  background-color: transparent;
 `;
 
 export const ImageList = styled.ul`

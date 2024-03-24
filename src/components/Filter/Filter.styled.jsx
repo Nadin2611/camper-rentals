@@ -95,14 +95,7 @@ export const CheckboxField = styled.fieldset`
   padding: 0;
 `;
 
-export const HiddenCheckbox = styled.input`
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-`;
-
-export const Checkbox = styled.label`
+export const Checkbox = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -123,13 +116,41 @@ export const Checkbox = styled.label`
   &:hover {
     border: 1px solid var(--color-button);
   }
+`;
 
-  ${HiddenCheckbox}:checked + & {
-    border: 1px solid var(--color-button);
-  }
+export const InputCheckbox = styled.input`
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: all;
+`;
+
+export const HiddenCheckbox = styled.input`
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: all;
 `;
 
 export const TypeCheckbox = styled(Checkbox)`
   padding-top: 18.5px;
   padding-bottom: 18.5px;
+`;
+
+export const HiddenRadio = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text);
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  cursor: pointer;
+  pointer-events: all;
 `;

@@ -10,10 +10,12 @@ export const Button = styled.button`
   text-align: center;
   text-transform: uppercase;
   outline: none;
+  transition: transform 0.5s ease-in-out;
 
   &:hover,
   &:focus {
     background-color: var(--color-button-hover);
+    transform: scale(1.05);
   }
 
   &:disabled {
@@ -31,4 +33,11 @@ export const LoadMoreBtn = styled.button`
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: -0.08px;
+  transition: transform 0.5s, border 0.5s ease-in-out;
+
+  &:hover,
+  &:focus {
+    border: 1px solid var(--color-button-hover);
+    transform: scale(1.05);
+  }
 `;

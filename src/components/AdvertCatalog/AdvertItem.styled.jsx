@@ -90,7 +90,6 @@ export const Description = styled.p`
   -webkit-line-clamp: 1;
   overflow: hidden;
   color: var(--color-main);
-  text-overflow: ellipsis;
 `;
 
 export const DetailsContainer = styled.div`

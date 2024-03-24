@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const WelcomeContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding-top: 70px;
+  padding-top: 100px;
   padding-left: 70px;
   color: var(--color-background);
   max-width: 600px;
@@ -27,6 +27,7 @@ export const Title = styled.h1`
     -0.5px 0.5px 0 rgba(255, 255, 255, 0.5),
     0.5px 0.5px 0 rgba(255, 255, 255, 0.5);
 `;
+
 export const TextWrap = styled.div`
   display: flex;
   flex-direction: column;
@@ -36,6 +37,7 @@ export const TextWrap = styled.div`
   background-color: rgba(255, 255, 255, 0.1);
   padding: 10px;
 `;
+
 export const Paragraph = styled.p`
   text-align: start;
   font-size: 14px;

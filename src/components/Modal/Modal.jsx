@@ -1,4 +1,4 @@
-// import { useEffect, useRef, useState } from 'react';
+// import { useEffect, useState } from 'react';
 // import { formatPrice, reverseLocation } from '../../services';
 // import {
 //   ModalBackdrop,
@@ -28,12 +28,7 @@
 // import BookingForm from 'components/BookingForm';
 
 // const Modal = ({ advert, closeModal }) => {
-//   // const [showFeatures, setShowFeatures] = useState(false);
-//   // const [showReviews, setShowReviews] = useState(false);
-//   const [isActive, setIsActive] = useState('features');
-//   const [isChangedActive, setIsChangedActive] = useState(false);
-
-//   const itemRef = useRef();
+//   const [activeTab, setActiveTab] = useState('');
 
 //   const { _id, name, price, rating, location, description, reviews, gallery } =
 //     advert;
@@ -58,32 +53,8 @@
 //     }
 //   };
 
-//   // const handleFeaturesClick = () => {
-//   //   setShowFeatures(true);
-//   //   setShowReviews(false);
-//   // };
-
-//   // const handleReviewsClick = () => {
-//   //   setShowFeatures(false);
-//   //   setShowReviews(true);
-//   // };
-
-//   // const toggleFeatures = () => {
-//   //   setIsFeaturesActive(!isFeaturesActive);
-//   //   setIsReviewsActive(false);
-//   // };
-
-//   // const toggleReviews = () => {
-//   //   setIsReviewsActive(!isReviewsActive);
-//   //   setIsFeaturesActive(false);
-//   // };
-
-//   const handleReviewsClick = () => {
-//     setIsModalShown(true);
-//     document.body.style.overflow = 'hidden';
-//     setIsActive('reviews');
-//     setIsChangedActive(true);
-//   };
+//   const handleFeaturesClick = () => setActiveTab('features');
+//   const handleReviewsClick = () => setActiveTab('reviews');
 
 //   return (
 //     <ModalBackdrop onClick={handleCloseModal}>
@@ -117,33 +88,41 @@
 //                 </ImageItem>
 //               ))}
 //           </ImageList>
-//           <Description>{description}</Description>{' '}
+//           <Description>{description}</Description>
 //           <InfoContainer>
 //             <List>
 //               <ListItem>
-//                 <Button onClick={toggleFeatures} active={isFeaturesActive}>
+//                 <Button
+//                   onClick={handleFeaturesClick}
+//                   active={activeTab === 'features' ? 'true' : ''}
+//                 >
 //                   Features
 //                 </Button>
 //               </ListItem>
 //               <ListItem>
-//                 <Button onClick={toggleReviews} active={isReviewsActive}>
+//                 <Button
+//                   onClick={handleReviewsClick}
+//                   active={activeTab === 'reviews' ? 'true' : ''}
+//                 >
 //                   Reviews
 //                 </Button>
 //               </ListItem>
 //             </List>
 //           </InfoContainer>
-//           {isFeaturesActive && (
-//             <ModalWrap>
-//               <Features advert={advert} />
-//               <BookingForm closeModal={closeModal} />
-//             </ModalWrap>
-//           )}
-//           {isReviewsActive && (
-//             <ModalWrap>
-//               <Reviews advert={advert} />
-//               <BookingForm closeModal={closeModal} />
-//             </ModalWrap>
-//           )}
+//           <ModalWrap>
+//             {activeTab === 'features' && (
+//               <>
+//                 <Features advert={advert} />
+//                 <BookingForm closeModal={closeModal} />
+//               </>
+//             )}
+//             {activeTab === 'reviews' && (
+//               <>
+//                 <Reviews advert={advert} />
+//                 <BookingForm closeModal={closeModal} />
+//               </>
+//             )}
+//           </ModalWrap>
 //         </SideContent>
 //       </ModalContent>
 //     </ModalBackdrop>
@@ -242,7 +221,7 @@ const Modal = ({ advert, closeModal }) => {
                 </ImageItem>
               ))}
           </ImageList>
-          <Description>{description}</Description>{' '}
+          <Description>{description}</Description>
           <InfoContainer>
             <List>
               <ListItem>

@@ -1,4 +1,4 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 import { Button } from 'components/Button/Button.styled';
 import {
   Checkbox,
@@ -9,10 +9,12 @@ import {
   FilterTitle,
   LocationLabel,
   Select,
+  InputCheckbox,
   HiddenCheckbox,
   TypeCheckbox,
   FormWrapper,
   Option,
+  HiddenRadio,
 } from './Filter.styled';
 import {
   AlcoveIcon,
@@ -29,12 +31,22 @@ import { reverseLocation } from 'services';
 import { locationsList } from './locations';
 
 const Filter = () => {
+  const [checkedValues, setCheckedValues] = useState({});
+
   const locations = locationsList.map(location => ({
     label: reverseLocation(location),
     value: location,
   }));
 
-  const handleSelectChange = event => {};
+  const handleSelectLocation = event => {
+    const { name, checked } = event.target;
+    setCheckedValues({ ...checkedValues, [name]: checked });
+  };
+
+  const handleSelectEquipment = event => {
+    const { name, checked } = event.target;
+    setCheckedValues(prevState => ({ ...prevState, [name]: checked }));
+  };
 
   return (
     <FilterContainer>
@@ -42,8 +54,8 @@ const Filter = () => {
         <FormWrapper>
           <LocationLabel>
             Location
-            <Select onChange={handleSelectChange}>
-              <Option value="" selected disabled hidden>
+            <Select value="" onChange={handleSelectLocation}>
+              <Option value="" disabled hidden>
                 City
               </Option>
               {locations.map((location, index) => (
@@ -61,27 +73,52 @@ const Filter = () => {
           <FilterLabel>Vehicle equipment</FilterLabel>
           <CheckboxField>
             <Checkbox>
-              <HiddenCheckbox type="checkbox" name="AC" />
+              <InputCheckbox
+                type="checkbox"
+                name="AC"
+                checked={checkedValues.AC}
+                onChange={handleSelectEquipment}
+              />
               <AcIcon size={32} />
               AC
             </Checkbox>
             <Checkbox>
-              <HiddenCheckbox type="checkbox" name="Automatic" />
+              <HiddenCheckbox
+                type="checkbox"
+                name="Automatic"
+                checked={checkedValues.Automatic}
+                onChange={handleSelectEquipment}
+              />
               <AutomaticIcon size={32} />
               Automatic
             </Checkbox>
             <Checkbox>
-              <HiddenCheckbox type="checkbox" name="Kitchen" />
+              <InputCheckbox
+                type="checkbox"
+                name="Kitchen"
+                checked={checkedValues.Kitchen}
+                onChange={handleSelectEquipment}
+              />
               <KitchenIcon size={32} />
               Kitchen
             </Checkbox>
             <Checkbox>
-              <HiddenCheckbox type="checkbox" name="TV" />
+              <InputCheckbox
+                type="checkbox"
+                name="TV"
+                checked={checkedValues.TV}
+                onChange={handleSelectEquipment}
+              />
               <TvIcon size={32} />
               TV
             </Checkbox>
             <Checkbox>
-              <HiddenCheckbox type="checkbox" name="Shower/WC" />
+              <InputCheckbox
+                type="checkbox"
+                name="Shower"
+                checked={checkedValues.Shower}
+                onChange={handleSelectEquipment}
+              />
               <ShowerIcon size={32} />
               Shower/WC
             </Checkbox>
@@ -92,20 +129,24 @@ const Filter = () => {
           <FilterLabel>Vehicle type</FilterLabel>
           <CheckboxField>
             <TypeCheckbox>
-              <HiddenCheckbox type="checkbox" />
+              <HiddenRadio type="radio" name="vehicleType" value="van" />
               <VanIcon width={40} height={28} />
               Van
             </TypeCheckbox>
             <TypeCheckbox
               style={{ paddingTop: '8.5px', paddingBottom: '8.5px' }}
             >
-              <HiddenCheckbox type="checkbox" />
+              <HiddenRadio
+                type="radio"
+                name="vehicleType"
+                value="fullyIntegrated"
+              />
               <FullyIcon width={40} height={28} />
               Fully <br />
               Integrated
             </TypeCheckbox>
             <TypeCheckbox>
-              <HiddenCheckbox type="checkbox" />
+              <HiddenRadio type="radio" name="vehicleType" value="alcove" />
               <AlcoveIcon width={40} height={28} />
               Alcove
             </TypeCheckbox>

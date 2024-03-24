@@ -21,12 +21,11 @@ export const NavList = styled.ul`
 `;
 
 export const Link = styled(NavLink)`  
-
   align-items: center;
   padding: 6px 10px;
   border-radius: 10px;
   text-decoration: none;
-  transition: box-shadow 0.3s, color 0.3s, transform 0.3s;
+  transition: box-shadow 0.5s, color 0.5s, transform 0.5s  ease-in-out;;
 
   &.active {     
     transform: scale(1.1);
