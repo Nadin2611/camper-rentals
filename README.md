@@ -47,9 +47,7 @@ preferences and travel needs.
 
 <a name="how-to-use"></a>
 
-1. Cloning the Repository
-
-Clone the repository from GitHub using the following command:
+1. Clone the repository from GitHub using the following command:
 
 ```sh
   git clone https://github.com/Nadin2611/camper-rentals
@@ -84,7 +82,7 @@ Clone the repository from GitHub using the following command:
    ```
 
 5. The application will start running locally, and you can access it via your
-   web browser at [http://localhost:3000](http://localhost:3000).
+   web browser at `http://localhost:3000`.
 
 <p align="right"><a href="#readme-top"><img src="./src/assets/images/arrow.svg" alt="Back to Top" width="20"></a></p>
 
