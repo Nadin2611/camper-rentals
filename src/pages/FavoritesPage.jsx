@@ -1,5 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { selectFavorites } from '../redux/adverts/selectors';
+import {
+  selectAdvertsError,
+  selectAdvertsLoading,
+  selectFavorites,
+} from '../redux/adverts/selectors';
 import { clearFavorites } from '../redux/adverts/slice';
 import { getUniqueLocations } from 'services/locations';
 import AdvertItem from 'components/AdvertCatalog/AdvertItem';
@@ -12,10 +16,13 @@ import {
 } from 'components/Container/Container.styled';
 import Filter from 'components/Filter';
 import NoFavorites from 'components/NoFavorites';
+import Loader from 'components/Loader';
 
 const FavoritesPage = () => {
   const favorites = useSelector(selectFavorites);
   const dispatch = useDispatch();
+  const isLoading = useSelector(selectAdvertsLoading);
+  const error = useSelector(selectAdvertsError);
 
   const locations = getUniqueLocations(favorites);
   const handleClearFavorites = () => {
@@ -40,6 +47,9 @@ const FavoritesPage = () => {
           <NoFavorites />
         </FavoriteContainer>
       )}
+
+      {isLoading && <Loader />}
+      {error && <p>Error: {error}</p>}
     </CatalogPageContainer>
   );
 };

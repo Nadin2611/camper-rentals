@@ -6,5 +6,3 @@ export const selectAdvertsError = state => state.adverts.error;
 
 export const selectFavorites = state =>
   state.adverts && state.adverts.favorites;
-
-export const selectTotalPages = state => state.adverts.totalPages;
