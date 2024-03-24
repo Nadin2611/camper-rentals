@@ -1,18 +1,18 @@
+// import { useState } from 'react';
 import { Button } from 'components/Button/Button.styled';
 import {
   Checkbox,
-  CheckboxContainer,
+  CheckboxField,
   FilterContainer,
   FilterForm,
   FilterLabel,
   FilterTitle,
   LocationLabel,
-  Option,
   Select,
-  OptionSelect,
   HiddenCheckbox,
   TypeCheckbox,
   FormWrapper,
+  Option,
 } from './Filter.styled';
 import {
   AlcoveIcon,
@@ -25,28 +25,41 @@ import {
   VanIcon,
 } from 'components/Icons';
 import AcIcon from 'components/Icons/AcIcon';
+import { reverseLocation } from 'services';
+import { locationsList } from './locations';
 
-const Filter = ({ locations }) => {
+const Filter = () => {
+  const locations = locationsList.map(location => ({
+    label: reverseLocation(location),
+    value: location,
+  }));
+
+  const handleSelectChange = event => {};
+
   return (
     <FilterContainer>
       <FilterForm>
         <FormWrapper>
-          <LocationLabel>Location</LocationLabel>
-          <MapPinIcon size={20} />
-          <Select>
-            <OptionSelect value="city">City</OptionSelect>
-            {locations.map((location, index) => (
-              <Option key={index}>
-                {location.split(',').reverse().join(',')}
+          <LocationLabel>
+            Location
+            <Select onChange={handleSelectChange}>
+              <Option value="" selected disabled hidden>
+                City
               </Option>
-            ))}
-          </Select>
+              {locations.map((location, index) => (
+                <Option key={index} value={location.value}>
+                  {location.label}
+                </Option>
+              ))}
+            </Select>
+            <MapPinIcon size={20} />
+          </LocationLabel>
         </FormWrapper>
 
         <FormWrapper>
           <FilterTitle>Filters</FilterTitle>
           <FilterLabel>Vehicle equipment</FilterLabel>
-          <CheckboxContainer>
+          <CheckboxField>
             <Checkbox>
               <HiddenCheckbox type="checkbox" name="AC" />
               <AcIcon size={32} />
@@ -72,12 +85,12 @@ const Filter = ({ locations }) => {
               <ShowerIcon size={32} />
               Shower/WC
             </Checkbox>
-          </CheckboxContainer>
+          </CheckboxField>
         </FormWrapper>
 
         <FormWrapper>
           <FilterLabel>Vehicle type</FilterLabel>
-          <CheckboxContainer>
+          <CheckboxField>
             <TypeCheckbox>
               <HiddenCheckbox type="checkbox" />
               <VanIcon width={40} height={28} />
@@ -96,7 +109,7 @@ const Filter = ({ locations }) => {
               <AlcoveIcon width={40} height={28} />
               Alcove
             </TypeCheckbox>
-          </CheckboxContainer>
+          </CheckboxField>
         </FormWrapper>
 
         <Button type="submit">Search</Button>

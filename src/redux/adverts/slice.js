@@ -34,11 +34,13 @@ export const advertsSlice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(getAdverts.pending, handlePending)
+
       .addCase(getAdverts.fulfilled, (state, { payload }) => {
         state.adverts = [...state.adverts, ...payload];
         state.isLoading = false;
         state.error = null;
       })
+
       .addCase(getAdverts.rejected, handleRejected);
   },
 });

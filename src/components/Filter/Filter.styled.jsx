@@ -12,6 +12,7 @@ export const FilterForm = styled.form`
     margin-top: 48px;
   }
 `;
+export const FormWrapper = styled.div``;
 
 export const LocationLabel = styled.label`
   color: rgba(16, 24, 40, 0.6);
@@ -19,9 +20,16 @@ export const LocationLabel = styled.label`
   display: flex;
   flex-direction: column;
   gap: 8px;
-`;
+  position: relative;
 
-export const FormWrapper = styled.div``;
+  svg {
+    position: absolute;
+    top: 50px;
+    left: 15px;
+    stroke: rgba(16, 24, 40, 0.6);
+    z-index: 1;
+  }
+`;
 
 export const Select = styled.select`
   display: flex;
@@ -30,28 +38,26 @@ export const Select = styled.select`
   align-items: flex-start;
   gap: 10px;
   width: 360px;
+  color: rgba(16, 24, 40, 0.6);
+  line-height: 1.25;
   border: none;
   border-radius: 10px;
   background: var(--color-inputs);
-`;
 
-export const OptionList = styled.ul`
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-`;
+  & option {
+    color: var(--color-text);
+    width: 360px;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.25;
+    width: 100%;
+  }
 
-export const OptionSelect = styled.option`
-  color: rgba(16, 24, 40, 0.6);
-  line-height: 1.25;
-  width: 100%;
-`;
-
-export const SelectIcon = styled.div`
-  //   position: absolute;
-  //   top: 20%;
-  //   left: 13%;
+  .selected option {
+    color: var(--color-text);
+  }
 `;
 
 export const Option = styled.option``;
@@ -79,12 +85,14 @@ export const FilterTitle = styled.h2`
   margin-bottom: 14px;
 `;
 
-export const CheckboxContainer = styled.div`
+export const CheckboxField = styled.fieldset`
   display: flex;
   flex-wrap: wrap;
   margin-top: 48px;
   gap: 10px;
   align-items: center;
+  border: none;
+  padding: 0;
 `;
 
 export const HiddenCheckbox = styled.input`
