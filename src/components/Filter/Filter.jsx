@@ -48,9 +48,13 @@ const Filter = () => {
     setCheckedValues(prevState => ({ ...prevState, [name]: checked }));
   };
 
+  const handleSubmit = event => {
+    event.preventDefault();
+  };
+
   return (
     <FilterContainer>
-      <FilterForm>
+      <FilterForm onSubmit={handleSubmit}>
         <FormWrapper>
           <LocationLabel>
             Location
