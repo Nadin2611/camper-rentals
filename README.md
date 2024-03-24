@@ -75,7 +75,7 @@ Clone the repository from GitHub using the following command:
 
    in your terminal.
 
-<p align="right">(<a href="#readme-top"><img src="./src/assets/images/arrow.svg" alt="Back to Top" width="20"></a>)</p>
+<p align="right"><a href="#readme-top"><img src="./src/assets/images/arrow.svg" alt="Back to Top" width="20"></a></p>
 
 4. Once the dependencies are installed, start the application using:
 
@@ -86,7 +86,7 @@ Clone the repository from GitHub using the following command:
 5. The application will start running locally, and you can access it via your
    web browser at [http://localhost:3000](http://localhost:3000).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top"><img src="./src/assets/images/arrow.svg" alt="Back to Top" width="20"></a></p>
 
 ## Contributing
 
@@ -101,7 +101,7 @@ please fork the repository and create a pull request.
 4. Push to the Branch: (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top"><img src="./src/assets/images/arrow.svg" alt="Back to Top" width="20"></a></p>
 
 ## Project Details
 
@@ -111,7 +111,7 @@ please fork the repository and create a pull request.
   [https://github.com/Nadin2611/camper-rentals](https://github.com/Nadin2611/camper-rentals)
 - Idea, Backend, and Design produced by: [GoIT](https://goit.global/ua/)
 
-## <p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top"><img src="./src/assets/images/arrow.svg" alt="Back to Top" width="20"></a></p>
 
 ---
 
