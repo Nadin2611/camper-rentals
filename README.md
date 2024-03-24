@@ -34,7 +34,7 @@ preferences and travel needs.
    information including photos, camper specifications, amenities and rental
    terms.<br><br>
 
-2. **Favorite offers**<br> Add campers to the list of favorites so as not to
+2. **Favorite campers**<br> Add campers to the list of favorites so as not to
    lose options that are interesting to you. Conveniently manage your favorite
    campers from your profile.<br><br>
 
@@ -42,6 +42,8 @@ preferences and travel needs.
    camper just for you. Filters include rental location, equipment (kitchen,
    bed, shower/WC, air conditioner, TV, cd, etc.) and type of camper (van, fully
    integrated or alcove).
+
+<p align="right"><a href="#readme-top"><img src="./src/assets/images/arrow.svg" alt="Back to Top" width="20"></a></p>
 
 ## How to Use
 

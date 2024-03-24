@@ -25,8 +25,7 @@ import {
 
 import * as Icons from '../Icons';
 import DefaultImage from 'components/DefaultImage/DefaultImage';
-
-import Modal from 'components/Modal/Modal';
+import Modal from 'components/Modal';
 
 const {
   AdultsIcon,

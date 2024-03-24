@@ -9,7 +9,7 @@ import {
 } from '../redux/adverts/selectors';
 import { getUniqueLocations, handleScroll } from '../services';
 
-import AdvertList from 'components/Catalog/AdvertList';
+import AdvertList from 'components/AdvertCatalog/AdvertList';
 import {
   CatalogPageContainer,
   Wrapper,

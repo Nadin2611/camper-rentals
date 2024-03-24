@@ -1,4 +1,4 @@
-import { DetailsItem } from 'components/Catalog/AdvertItem.styled';
+import { DetailsItem } from 'components/AdvertCatalog/AdvertItem.styled';
 import { capitalize } from '../../services';
 import {
   AdultsIcon,

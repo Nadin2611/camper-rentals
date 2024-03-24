@@ -15,6 +15,7 @@ export const ModalBackdrop = styled.div`
 export const ModalContent = styled.div`
   position: relative;
   max-width: 982px;
+  max-height: 90vh;
   padding: 40px 40px 68px 40px;
   border-radius: 20px;
   border: 1px solid rgba(16, 24, 40, 0.2);
@@ -83,21 +84,25 @@ export const Button = styled.button`
   line-height: 1.2;
   transition: color 0.3s;
 
-  &.active::after {
-    content: '';
-    position: absolute;
-    background-color: var(--color-button);
-    width: 100%;
-    top: 45px;
-    height: 5px;
-    border: 5px 0px 0px 0px;
-  }
-
   &:hover,
   &:focus {
     color: var(--color-button);
-    width: 100%;
   }
+
+  ${props =>
+    props.active &&
+    `
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      background-color: var(--color-button);
+      width: 100%;
+      top: 45px;
+      height: 5px;
+      border-radius: 5px 5px 0 0;
+    }
+  `}
 `;
 
 export const SideContent = styled.div`
