@@ -104,7 +104,7 @@ export const Button = styled.button`
 
 export const SideContent = styled.div`
   overflow-y: auto;
-  max-height: 406px;
+  max-height: 70vh;
   margin-right: -16px;
 
   &::-webkit-scrollbar {
