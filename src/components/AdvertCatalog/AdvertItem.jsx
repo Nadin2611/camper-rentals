@@ -108,34 +108,32 @@ const AdvertItem = ({ advert }) => {
           </RatingWrapper>
         </InfoContainer>
         <Description>{description}</Description>
-        {!isModalOpen && (
-          <DetailsContainer>
-            <DetailsItem>
-              <AdultsIcon size={20} />
-              <span>{adults} Adults</span>
-            </DetailsItem>
-            <DetailsItem>
-              <AutomaticIcon size={20} />
-              <span>{capitalize(transmission)}</span>
-            </DetailsItem>
-            <DetailsItem>
-              <PetrolIcon size={20} />
-              <span>{capitalize(engine)}</span>
-            </DetailsItem>
-            <DetailsItem>
-              <KitchenIcon size={20} />
-              <span> {details.kitchen} Kitchen</span>
-            </DetailsItem>
-            <DetailsItem>
-              <BedsIcon size={20} />
-              <span> {details.beds} beds</span>
-            </DetailsItem>
-            <DetailsItem>
-              <AcIcon size={20} />
-              <span> AC </span>
-            </DetailsItem>
-          </DetailsContainer>
-        )}
+        <DetailsContainer>
+          <DetailsItem>
+            <AdultsIcon size={20} />
+            <span>{adults} Adults</span>
+          </DetailsItem>
+          <DetailsItem>
+            <AutomaticIcon size={20} />
+            <span>{capitalize(transmission)}</span>
+          </DetailsItem>
+          <DetailsItem>
+            <PetrolIcon size={20} />
+            <span>{capitalize(engine)}</span>
+          </DetailsItem>
+          <DetailsItem>
+            <KitchenIcon size={20} />
+            <span> {details.kitchen} Kitchen</span>
+          </DetailsItem>
+          <DetailsItem>
+            <BedsIcon size={20} />
+            <span> {details.beds} beds</span>
+          </DetailsItem>
+          <DetailsItem>
+            <AcIcon size={20} />
+            <span> AC </span>
+          </DetailsItem>
+        </DetailsContainer>
         <Button onClick={openModal}>Show more</Button>
       </InfoWrapper>
 

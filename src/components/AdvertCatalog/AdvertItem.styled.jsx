@@ -105,7 +105,6 @@ export const DetailsItem = styled.div`
   gap: 8px;
   border-radius: 100px;
   background: var(--color-block);
-  mix-blend-mode: multiply;
   line-height: 1.25;
   font-weight: 500;
 `;
