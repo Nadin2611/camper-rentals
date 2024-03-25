@@ -96,7 +96,7 @@ const AdvertItem = ({ advert }) => {
           </TitleContainer>
           <RatingWrapper>
             <RatingContainer>
-              <StarIcon size={14} />
+              <StarIcon size={14} color={'var(--color-rating)'} />
               <span>
                 {rating}({advert.reviews.length} reviews)
               </span>

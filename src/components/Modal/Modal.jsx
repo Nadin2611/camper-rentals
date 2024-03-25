@@ -71,7 +71,7 @@ const Modal = ({ advert, closeModal }) => {
         <Title style={{ marginBottom: '10px' }}>{name}</Title>
         <RatingWrapper style={{ marginBottom: '16px' }}>
           <RatingContainer>
-            <StarIcon size={20} />
+            <StarIcon size={20} color={'var(--color-rating)'} />
             <span>{`${rating}(${reviews.length} Reviews)`}</span>
           </RatingContainer>
           <Location>

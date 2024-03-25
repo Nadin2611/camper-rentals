@@ -12,7 +12,7 @@ import {
 
 const ReviewsItem = ({ review }) => {
   const letterIcon = review.reviewer_name ? review.reviewer_name.charAt(0) : '';
-
+  console.log('Кількість зірочок:', Math.round(review.reviewer_rating));
   return (
     <ReviewsWrap>
       <NameWrap>
@@ -23,14 +23,14 @@ const ReviewsItem = ({ review }) => {
             <StarsList>
               {Array(5)
                 .fill(0)
-                .map((star, index) => (
+                .map((_, index) => (
                   <li key={index}>
                     <StarIcon
                       size={20}
-                      fillColor={
-                        Math.round(review.reviewer_rating) < index + 1
-                          ? 'var(--color-block)'
-                          : 'var(--color-rating)'
+                      color={
+                        Math.round(review.reviewer_rating) > index
+                          ? 'var(--color-rating)'
+                          : 'var(--color-block)'
                       }
                     />
                   </li>
