@@ -87,10 +87,7 @@ export const Button = styled.button`
   transition: color 0.3s;
 
   &:hover,
-  &:focus {
-    color: var(--color-button);
-  }
-
+  &:focus,
   &.active {
     &::after {
       content: '';

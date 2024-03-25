@@ -99,7 +99,6 @@ export const Checkbox = styled.div`
   flex-direction: column;
   border-radius: 10px;
   border: 1px solid rgba(16, 24, 40, 0.2);
-  mix-blend-mode: multiply;
   text-align: center;
   min-width: calc((100% - 2 * 10px) / 3);
   padding-top: 17px;
